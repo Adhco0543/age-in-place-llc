@@ -1,13 +1,13 @@
 // Site configuration for Age in Place LLC
 
 export const siteConfig = {
-  name: 'Age in Place LLC',
+  name: 'Age In Place LLC',
   domain: 'ageinplacellc.com',
-  description: 'Professional accessibility and aging-in-place modifications for elderly and families',
+  description: 'Professional childproofing, fall-prevention, accessibility upgrades, and home safety installations throughout New England.',
   url: 'https://ageinplacellc.com',
-  email: 'info@ageinplacellc.com',
-  phone: '(555) 123-4567',
-  address: 'Your Address Here, City, State 12345',
+  email: 'adh@wbhb666.com',
+  phone: '603-703-6633',
+  address: 'Serving New England',
   social: {
     facebook: '#',
     instagram: '#',
@@ -17,102 +17,47 @@ export const siteConfig = {
 
 export const services = [
   {
+    id: 'senior-safety',
+    title: 'Senior Home Safety',
+    description: 'Practical upgrades that reduce fall risks and help older adults remain safe and independent at home.',
+    icon: '🛡️',
+    features: ['Grab bar installation', 'Stair and hallway handrails', 'Bathroom safety upgrades', 'Wheelchair and threshold ramps', 'Improved lighting and safer entries'],
+  },
+  {
+    id: 'childproofing',
+    title: 'Professional Childproofing',
+    description: 'Whole-home safety solutions for families with newborns through children age 10.',
+    icon: '👶',
+    features: ['Furniture and television anchoring', 'Safety gates and stair protection', 'Cabinet and drawer locks', 'Window, door, outlet, and cord safety', 'Fireplace and sharp-corner protection'],
+  },
+  {
+    id: 'assessment',
+    title: 'Home Safety Assessment',
+    description: 'A room-by-room walkthrough that identifies hazards and provides a clear plan for improvements.',
+    icon: '📋',
+    features: ['Room-by-room risk review', 'Child and senior safety recommendations', 'Prioritized improvement plan', 'Clear written estimate', 'Free consultation'],
+  },
+  {
     id: 'bathroom',
     title: 'Bathroom Safety',
-    description: 'Grab bars, shower seating, raised toilets, slip-resistant flooring, and more.',
-    icon: '🚿',
-    features: [
-      'Grab bar installation',
-      'Shower seating',
-      'Raised toilet seats',
-      'Slip-resistant flooring',
-      'Accessible showers',
-    ],
+    description: 'Safer bathing and toilet areas designed around comfort, stability, and accessibility.',
+    icon: '🛁',
+    features: ['Grab bars', 'Shower seating', 'Toilet safety rails', 'Slip-resistant solutions', 'Accessible shower upgrades'],
   },
   {
-    id: 'kitchen',
-    title: 'Kitchen Modifications',
-    description: 'Pull-out shelving, accessible cabinets, lever faucets, and lower counters.',
-    icon: '🍽️',
-    features: [
-      'Pull-out shelving',
-      'Accessible cabinets',
-      'Lever faucets',
-      'Lower counters',
-      'Adjustable kitchen islands',
-    ],
+    id: 'accessibility',
+    title: 'Accessibility Carpentry',
+    description: 'Custom carpentry and entry improvements that make daily movement easier and safer.',
+    icon: '🔨',
+    features: ['Ramps and threshold transitions', 'Doorway and entry modifications', 'Custom handrails', 'Minor accessibility carpentry', 'Safer steps and landings'],
   },
   {
-    id: 'entrances',
-    title: 'Entrance & Mobility',
-    description: 'Ramps, railings, lighting, slip-resistance surfaces, and door modifications.',
-    icon: '🚪',
-    features: [
-      'Ramp installation',
-      'Handrails & railings',
-      'Improved lighting',
-      'Slip-resistant surfaces',
-      'Wider door frames',
-    ],
-  },
-  {
-    id: 'smart-home',
-    title: 'Smart Home Technology',
-    description: 'Voice-controlled lighting, automated doors, smart thermostats, and more.',
-    icon: '🏠',
-    features: [
-      'Voice-controlled lights',
-      'Automated door openers',
-      'Smart thermostats',
-      'Emergency alert systems',
-      'Fall detection devices',
-    ],
-  },
-  {
-    id: 'child-proofing',
-    title: 'Child Safety',
-    description: 'Professional child-proofing solutions for families with young children.',
-    icon: '👶',
-    features: [
-      'Safety gates',
-      'Corner protectors',
-      'Cabinet locks',
-      'Outlet covers',
-      'Window safety',
-    ],
-  },
-  {
-    id: 'bedrooms',
-    title: 'Bedroom Accessibility',
-    description: 'Bed rails, accessible closets, adjustable lighting, and safe flooring.',
-    icon: '🛏️',
-    features: [
-      'Bed rails & assists',
-      'Accessible closets',
-      'Nighttime lighting',
-      'Non-slip flooring',
-      'Transfer equipment',
-    ],
+    id: 'fall-prevention',
+    title: 'Fall Prevention',
+    description: 'Targeted improvements that address common trip, slip, balance, and visibility hazards.',
+    icon: '🚶',
+    features: ['Non-slip safety solutions', 'Trip-hazard corrections', 'Improved lighting', 'Bed and transfer supports', 'Safer walking paths'],
   },
 ];
 
-export const testimonials = [
-  {
-    name: 'Mary Johnson',
-    role: 'Elderly homeowner',
-    quote: 'Age in Place made my home safe and comfortable. I can now navigate my bathroom without worry.',
-    image: '👩‍🦳',
-  },
-  {
-    name: 'Robert Smith',
-    role: 'Family with young children',
-    quote: 'Professional and thorough. They child-proofed our home perfectly. Highly recommended!',
-    image: '👨‍👩‍👧‍👦',
-  },
-  {
-    name: 'Sarah Davis',
-    role: 'Caregiver for elderly parent',
-    quote: 'The smart home installation has made caregiving so much easier. Amazing team!',
-    image: '👩‍⚕️',
-  },
-];
+export const testimonials = [];
