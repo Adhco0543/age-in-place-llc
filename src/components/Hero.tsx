@@ -1,59 +1,66 @@
 import Link from 'next/link';
+import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 py-20 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-8 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                Age in Place, With Confidence
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Professional accessibility and aging-in-place modifications for seniors (55+) and families with young children. Safe, smart, and beautiful home solutions.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white hover:bg-blue-700 transition-colors"
-              >
-                Explore Services
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-gray-300 dark:border-gray-600 px-6 py-3 text-base font-semibold text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-              >
-                Get a Free Quote
-              </Link>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✓</span>
-                <span className="text-sm text-gray-600 dark:text-gray-300">Licensed & Insured</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✓</span>
-                <span className="text-sm text-gray-600 dark:text-gray-300">10+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✓</span>
-                <span className="text-sm text-gray-600 dark:text-gray-300">Free Consultation</span>
-              </div>
-            </div>
+    <section className="relative overflow-hidden bg-slate-950 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.16),transparent_30%)]" />
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8 lg:py-28">
+        <div>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-200 backdrop-blur">
+            <ShieldCheck className="h-4 w-4 text-teal-300" />
+            Serving families throughout New England
           </div>
 
-          {/* Right Image */}
-          <div className="relative h-80 md:h-96 rounded-2xl bg-gradient-to-br from-blue-200 to-indigo-300 dark:from-gray-700 dark:to-gray-600 overflow-hidden flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <div className="text-6xl">🏠</div>
-              <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">Safe & Accessible Homes</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Built for independence and peace of mind</p>
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
+            Safer homes for children, seniors, and every stage of life.
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+            Professional childproofing, fall-prevention, accessibility upgrades, and home safety installations designed around the people you care about most.
+          </p>
+
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-400 px-6 py-3.5 font-semibold text-slate-950 transition hover:bg-teal-300"
+            >
+              Schedule a Free Consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="tel:6037036633"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
+            >
+              <Phone className="h-4 w-4" />
+              603-703-6633
+            </a>
+          </div>
+
+          <div className="mt-10 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
+            {['Licensed NH contractor', 'Fully insured', '66 years combined experience'].map((item) => (
+              <div key={item} className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-teal-300" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur">
+            <div className="rounded-2xl bg-white p-7 text-slate-900 sm:p-9">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">What we protect</p>
+              <div className="mt-6 space-y-6">
+                <div className="rounded-2xl bg-slate-50 p-5">
+                  <h2 className="text-xl font-bold">Children & Families</h2>
+                  <p className="mt-2 text-slate-600">Professional childproofing for newborns through age 10, including gates, anchoring, locks, window safety, and full-home assessments.</p>
+                </div>
+                <div className="rounded-2xl bg-slate-50 p-5">
+                  <h2 className="text-xl font-bold">Older Adults & Caregivers</h2>
+                  <p className="mt-2 text-slate-600">Grab bars, handrails, ramps, bathroom safety, fall-prevention, and accessibility carpentry that support safer independent living.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
