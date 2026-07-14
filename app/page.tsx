@@ -1,13 +1,25 @@
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { Testimonials } from "@/components/Testimonials";
+import { Owners } from "@/components/Owners";
+import {
+  FAQPreview,
+  FinalCTA,
+  GalleryPreview,
+  Process,
+  WhyChooseUs,
+} from "@/components/HomeSections";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Services />
-      <Testimonials />
+      <WhyChooseUs />
+      <Process />
+      <Owners />
+      <GalleryPreview />
+      <FAQPreview />
+      <FinalCTA />
     </>
   );
 }
