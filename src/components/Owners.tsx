@@ -17,20 +17,22 @@ const owners = [
 
 export function Owners() {
   return (
-    <section className="bg-slate-100 py-20 sm:py-24">
+    <section className="bg-slate-100 pt-28 pb-20 sm:pt-32 sm:pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">
-            Meet the team
+            Meet the Team
           </p>
 
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-            Experience and care you can trust
+            Experience and Care You Can Trust
           </h2>
 
           <p className="mt-4 text-lg leading-8 text-slate-600">
-            Age In Place LLC is owner-led, fully insured, and backed by 66 years
-            of combined construction and home improvement experience.
+            Age In Place LLC is fully insured and dedicated to helping people
+            live safely and independently at home. Our mission is simple:
+            provide honest recommendations, quality workmanship, and peace of
+            mind for every homeowner and family we serve.
           </p>
         </div>
 
@@ -74,7 +76,7 @@ export function Owners() {
             className="inline-flex items-center gap-2 font-semibold text-slate-900 hover:text-teal-700"
           >
             <Phone className="h-4 w-4" />
-            Speak with our team: 603-703-6633
+            Speak with our team: (603) 703-6633
           </a>
         </div>
       </div>
