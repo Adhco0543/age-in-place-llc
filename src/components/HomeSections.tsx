@@ -3,10 +3,8 @@ import {
   ArrowRight,
   BadgeCheck,
   Camera,
-  CheckCircle2,
   ClipboardCheck,
   HeartHandshake,
-  Home,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -26,8 +24,8 @@ const reasons = [
   },
   {
     icon: Wrench,
-    title: "66 years combined experience",
-    text: "Decades of construction and home-improvement experience guide every assessment and installation.",
+    title: "Experienced professionals",
+    text: "Our team brings decades of real-world construction and home improvement experience, providing honest recommendations and quality workmanship with every project.",
   },
   {
     icon: BadgeCheck,
@@ -125,8 +123,12 @@ export function WhyChooseUs() {
                   className="rounded-3xl border border-white/10 bg-white/5 p-6"
                 >
                   <Icon className="h-7 w-7 text-teal-300" />
+
                   <h3 className="mt-5 text-xl font-bold">{reason.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-300">{reason.text}</p>
+
+                  <p className="mt-3 leading-7 text-slate-300">
+                    {reason.text}
+                  </p>
                 </article>
               );
             })}
@@ -229,10 +231,13 @@ export function GalleryPreview() {
               className="flex min-h-72 flex-col justify-end rounded-3xl border border-dashed border-slate-300 bg-white p-7"
             >
               <Camera className="h-8 w-8 text-teal-700" />
+
               <h3 className="mt-5 text-xl font-bold text-slate-950">
                 {category.title}
               </h3>
+
               <p className="mt-2 text-slate-600">{category.text}</p>
+
               <p className="mt-5 text-sm font-semibold text-teal-700">
                 Project photos coming soon
               </p>
@@ -300,6 +305,7 @@ export function FinalCTA() {
         <div className="max-w-3xl">
           <div className="flex items-center gap-2 text-teal-100">
             <Sparkles className="h-5 w-5" />
+
             <span className="text-sm font-semibold uppercase tracking-[0.18em]">
               Free consultation
             </span>

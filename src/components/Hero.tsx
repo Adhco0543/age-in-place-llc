@@ -10,9 +10,9 @@ import {
 export function Hero() {
   const trustPoints = [
     "Fully insured",
-    "66 years combined experience",
-    "Serving New England",
-    "Owner-led company",
+    "Allen: 56 years of experience",
+    "Timothy: 10 years of experience",
+    "Available throughout New England",
   ];
 
   return (
@@ -23,7 +23,7 @@ export function Hero() {
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-200 backdrop-blur">
             <ShieldCheck className="h-4 w-4 text-teal-300" />
-            New England&apos;s Home Safety & Accessibility Specialists
+            New England Home Safety & Accessibility Specialists
           </div>
 
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
@@ -36,12 +36,17 @@ export function Hero() {
             help people remain independent in the homes they love.
           </p>
 
+          <p className="mt-5 text-base font-medium text-teal-300">
+            Based in New Hampshire. Proudly serving homeowners and families
+            throughout New England.
+          </p>
+
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-400 px-6 py-3.5 font-semibold text-slate-950 transition hover:bg-teal-300"
             >
-              Schedule a Safe Home Assessment
+              Schedule Your Free Safe Home Assessment
               <ArrowRight className="h-4 w-4" />
             </Link>
 
@@ -50,7 +55,7 @@ export function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
             >
               <Phone className="h-4 w-4" />
-              Call 603-703-6633
+              Speak With a Home Safety Specialist
             </a>
           </div>
 
@@ -72,7 +77,7 @@ export function Hero() {
               </div>
 
               <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">
-                The Safe Home Assessment
+                Our Safe Home Assessment
               </p>
 
               <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
@@ -99,10 +104,19 @@ export function Hero() {
                 ))}
               </ul>
 
-              <p className="mt-6 border-l-4 border-teal-500 pl-5 font-semibold text-slate-900">
-                We recommend only what we believe will genuinely make the home
-                safer, easier to use, or more comfortable.
-              </p>
+              <div className="mt-6 border-l-4 border-teal-500 pl-5">
+                <p className="font-semibold text-slate-900">
+                  Every recommendation begins with one simple question:
+                </p>
+
+                <p className="mt-3 text-lg font-bold text-slate-950">
+                  Will this make your home safer?
+                </p>
+
+                <p className="mt-3 font-semibold text-slate-900">
+                  If the answer is no, we won&apos;t recommend it.
+                </p>
+              </div>
             </div>
           </div>
         </div>
