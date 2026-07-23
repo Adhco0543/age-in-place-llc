@@ -5,6 +5,7 @@ import {
   Camera,
   ClipboardCheck,
   HeartHandshake,
+  Home,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -13,24 +14,24 @@ import {
 
 const reasons = [
   {
-    icon: HeartHandshake,
-    title: "We listen first",
-    text: "We begin by understanding your concerns, routines, mobility needs, budget, and what you value most about your home.",
-  },
-  {
     icon: ShieldCheck,
-    title: "Safety before sales",
-    text: "We only recommend work that we believe will genuinely improve safety, accessibility, comfort, or independence.",
+    title: "Safety before everything",
+    text: "Every recommendation is made to reduce risk, improve daily comfort, and support long-term independence at home.",
   },
   {
     icon: Wrench,
-    title: "Experienced professionals",
-    text: "Our team brings decades of real-world construction and home improvement experience, providing honest recommendations and quality workmanship with every project.",
+    title: "Experience you can trust",
+    text: "Our team brings decades of hands-on construction and home-improvement experience to every aging-in-place project.",
   },
   {
-    icon: BadgeCheck,
-    title: "Fully insured",
-    text: "Age In Place LLC is fully insured and coordinates qualified trade partners when specialized work is required.",
+    icon: Home,
+    title: "Built around your needs",
+    text: "No two homes, routines, or families are the same. We shape each plan around the person, the property, and the budget.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Honest recommendations",
+    text: "If something is not necessary, we will tell you. Our goal is to earn trust, not pressure you into work you do not need.",
   },
 ];
 
@@ -66,7 +67,7 @@ const faqs = [
   {
     question: "What areas do you serve?",
     answer:
-      "Age In Place LLC serves homeowners, families, caregivers, and care professionals throughout New England. Availability depends on location and project scope.",
+      "Age In Place LLC works with homeowners, families, caregivers, and care professionals based on project scope and availability. Contact us to discuss your location and needs.",
   },
   {
     question: "Can you complete wheelchair-accessibility modifications?",
@@ -89,50 +90,53 @@ export function WhyChooseUs() {
   return (
     <section className="bg-slate-950 py-20 text-white sm:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
-              Our promise
-            </p>
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
+            Why families trust Age In Place LLC
+          </p>
 
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-              We do not enter homes simply to sell products.
-            </h2>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
+            Growing older should not mean leaving the home you love.
+          </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-300">
-              We enter homes to protect the people who live there. Every
-              recommendation begins with one question:
-            </p>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            We help people remain safer, more comfortable, and more independent through thoughtful home modifications, accessibility improvements, remodeling, and skilled carpentry.
+          </p>
 
-            <blockquote className="mt-6 border-l-4 border-teal-400 pl-5 text-xl font-semibold leading-8">
-              Will this make the home safer for the person who calls it home?
-            </blockquote>
+          <blockquote className="mx-auto mt-8 max-w-3xl border-l-4 border-teal-400 pl-5 text-left text-xl font-semibold leading-8 text-white">
+            Every project begins with one question: Will this help someone live more safely, comfortably, and independently at home?
+          </blockquote>
+        </div>
 
-            <p className="mt-6 font-semibold text-teal-300">
-              If the answer is no, we will not recommend it.
-            </p>
-          </div>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {reasons.map((reason) => {
+            const Icon = reason.icon;
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            {reasons.map((reason) => {
-              const Icon = reason.icon;
+            return (
+              <article
+                key={reason.title}
+                className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:border-teal-300/40 hover:bg-white/[0.08]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-400/10 text-teal-300">
+                  <Icon className="h-6 w-6" />
+                </div>
 
-              return (
-                <article
-                  key={reason.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-6"
-                >
-                  <Icon className="h-7 w-7 text-teal-300" />
+                <h3 className="mt-5 text-xl font-bold">{reason.title}</h3>
 
-                  <h3 className="mt-5 text-xl font-bold">{reason.title}</h3>
+                <p className="mt-3 leading-7 text-slate-300">{reason.text}</p>
+              </article>
+            );
+          })}
+        </div>
 
-                  <p className="mt-3 leading-7 text-slate-300">
-                    {reason.text}
-                  </p>
-                </article>
-              );
-            })}
-          </div>
+        <div className="mt-12 rounded-3xl border border-teal-300/20 bg-teal-400/10 p-7 text-center sm:p-9">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-300">
+            Our promise
+          </p>
+
+          <p className="mx-auto mt-4 max-w-4xl text-xl font-semibold leading-8 text-white sm:text-2xl">
+            Whether we are installing one grab bar or completing a full accessibility renovation, we will treat your home with respect, communicate clearly, and complete the work with care.
+          </p>
         </div>
       </div>
     </section>
@@ -153,8 +157,7 @@ export function Process() {
           </h2>
 
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            We listen carefully, walk through the home with you, explain what we
-            find, and build a realistic plan around your needs.
+            We listen carefully, walk through the home with you, explain what we find, and build a realistic plan around your needs.
           </p>
         </div>
 
@@ -316,8 +319,7 @@ export function FinalCTA() {
           </h2>
 
           <p className="mt-4 text-lg text-teal-50">
-            Tell us what has changed, what concerns you, and what you want to
-            preserve about the home you love.
+            Tell us what has changed, what concerns you, and what you want to preserve about the home you love.
           </p>
         </div>
 
