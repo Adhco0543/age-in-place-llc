@@ -1,59 +1,135 @@
-import Link from 'next/link';
-import { services } from '@/lib/config';
+import Link from "next/link";
+import {
+  ArrowRight,
+  Bath,
+  ClipboardCheck,
+  CookingPot,
+  Drill,
+  HandHelping,
+  RampRight,
+} from "lucide-react";
+
+const services = [
+  {
+    title: "Grab Bar Installation",
+    description:
+      "Securely installed support in showers, tubs, toilet areas, hallways, and other high-risk locations.",
+    href: "/grab-bar-installation",
+    image:
+      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85",
+    icon: Drill,
+  },
+  {
+    title: "Accessible Bathroom Remodeling",
+    description:
+      "Walk-in showers, safer layouts, seating, grab bars, and practical bathroom improvements built for daily use.",
+    href: "/services/accessible-bathrooms",
+    image:
+      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=85",
+    icon: Bath,
+  },
+  {
+    title: "Kitchen Accessibility",
+    description:
+      "Safer layouts, reachable storage, improved lighting, and remodeling solutions that make kitchens easier to use.",
+    href: "/services/kitchen-accessibility",
+    image:
+      "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85",
+    icon: CookingPot,
+  },
+  {
+    title: "Handrails & Safer Stairs",
+    description:
+      "Strong handrails, improved steps, safer landings, and sturdy support for interior and exterior transitions.",
+    href: "/services/handrails",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85",
+    icon: HandHelping,
+  },
+  {
+    title: "Wheelchair Ramps",
+    description:
+      "Custom access solutions for safer entry and exit, designed around the home, site conditions, and user needs.",
+    href: "/services/wheelchair-ramps",
+    image:
+      "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=900&q=85",
+    icon: RampRight,
+  },
+  {
+    title: "Home Safety Assessments",
+    description:
+      "A careful walkthrough to identify fall risks, mobility barriers, and practical improvements in priority order.",
+    href: "/services/home-safety-assessments",
+    image:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
+    icon: ClipboardCheck,
+  },
+];
 
 export function Services() {
   return (
-    <section className="py-20 sm:py-32 bg-white dark:bg-gray-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+    <section className="bg-white py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-700">
+            Accessibility, safety, and remodeling
+          </p>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
             Our Services
           </h2>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            Comprehensive modifications to make homes safer, more accessible, and smarter
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Practical improvements designed around the person, the home, and the
+            way each space is used every day.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="rounded-lg border border-gray-200 dark:border-gray-700 p-8 hover:shadow-lg dark:hover:shadow-xl dark:shadow-gray-900 transition-shadow bg-white dark:bg-gray-900"
-            >
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {service.description}
-              </p>
-              <ul className="space-y-2 mb-6">
-                {service.features.slice(0, 3).map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                    <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline"
+        <div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <article
+                key={service.title}
+                className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
-                Learn More →
-              </Link>
-            </div>
-          ))}
+                <div className="relative h-52 overflow-hidden bg-slate-200">
+                  <img
+                    src={service.image}
+                    alt=""
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 to-transparent" />
+                </div>
+
+                <div className="p-7">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-100 text-teal-800">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-black text-slate-950">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-slate-600">
+                    {service.description}
+                  </p>
+                  <Link
+                    href={service.href}
+                    className="mt-6 inline-flex items-center gap-2 font-bold text-teal-800 hover:text-teal-600"
+                  >
+                    Learn more
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-14 text-center">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-base font-semibold text-white hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-7 py-3.5 font-bold text-white transition hover:bg-teal-600"
           >
             Schedule Your Free Consultation
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
       </div>
