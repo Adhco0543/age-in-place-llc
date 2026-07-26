@@ -16,22 +16,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} - Accessibility & Aging-in-Place Modifications`,
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} | Home Safety & Accessibility Specialists`,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.description,
   keywords: [
-    "aging in place",
-    "accessibility modifications",
-    "home modifications for elderly",
-    "smart home installation",
-    "child proofing",
-    "universal design",
-    "accessibility solutions",
+    "aging in place Manchester NH",
+    "home safety modifications Manchester NH",
+    "accessibility contractor Southern New Hampshire",
+    "grab bar installation Manchester NH",
+    "wheelchair ramp contractor New Hampshire",
+    "accessible bathroom remodeling",
+    "senior home modifications",
+    "home accessibility improvements",
+    "fall prevention home modifications",
+    "Age In Place LLC",
   ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: `${siteConfig.name} - Accessibility & Aging-in-Place Modifications`,
+    title: `${siteConfig.name} | Home Safety & Accessibility Specialists`,
     description: siteConfig.description,
     type: "website",
     url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Home Safety & Accessibility Specialists`,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -44,25 +68,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
+      <body className="flex min-h-full flex-col bg-white text-slate-950">
         <Header />
-        <main className="flex-1">{children}</main>
+        <div className="flex-1">{children}</div>
         <Footer />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
       </body>
     </html>
   );
