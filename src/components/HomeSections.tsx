@@ -66,7 +66,7 @@ const faqs = [
   {
     question: "What areas do you serve?",
     answer:
-      "Age In Place LLC serves homeowners, families, caregivers, and care professionals throughout New England. Availability depends on location and project scope.",
+      "Age In Place LLC serves Manchester, Bedford, Hooksett, Goffstown, Londonderry, Auburn, Derry, Merrimack, Amherst, and surrounding Southern New Hampshire communities. Availability depends on location and project scope.",
   },
   {
     question: "Can you complete wheelchair-accessibility modifications?",
@@ -211,7 +211,9 @@ export function GalleryPreview() {
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Real project photos will be added as completed work is documented.
+              Every project we complete is designed to improve safety,
+              independence, comfort, and peace of mind while respecting the look
+              and feel of the home.
             </p>
           </div>
 
@@ -239,7 +241,7 @@ export function GalleryPreview() {
               <p className="mt-2 text-slate-600">{category.text}</p>
 
               <p className="mt-5 text-sm font-semibold text-teal-700">
-                Project photos coming soon
+                Completed project gallery coming soon
               </p>
             </article>
           ))}
@@ -312,12 +314,13 @@ export function FinalCTA() {
           </div>
 
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl">
-            Ready to make your home safer?
+            Let&apos;s make your home safer, more comfortable, and easier to live in.
           </h2>
 
           <p className="mt-4 text-lg text-teal-50">
-            Tell us what has changed, what concerns you, and what you want to
-            preserve about the home you love.
+            Whether you are planning ahead, recovering from an injury, or
+            helping someone you love remain independent, we will help you find
+            the right next step.
           </p>
         </div>
 
