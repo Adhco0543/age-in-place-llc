@@ -9,10 +9,10 @@ import {
 
 export function Hero() {
   const trustPoints = [
-    "Fully insured",
-    "Allen: 56 years of experience",
-    "Timothy: 10 years of experience",
-    "Available throughout New England",
+    "Fully Insured",
+    "52+ Years of Professional Experience",
+    "Free Home Safety Assessments",
+    "Locally Owned & Operated",
   ];
 
   return (
@@ -23,11 +23,11 @@ export function Hero() {
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-200 backdrop-blur">
             <ShieldCheck className="h-4 w-4 text-teal-300" />
-            New England Home Safety & Accessibility Specialists
+            Home Safety & Accessibility Specialists
           </div>
 
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-7xl">
-            Helping People Live Safely at Home.
+            Helping You Live Safely and Independently at Home.
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
@@ -37,8 +37,9 @@ export function Hero() {
           </p>
 
           <p className="mt-5 text-base font-medium text-teal-300">
-            Based in New Hampshire. Proudly serving homeowners and families
-            throughout New England.
+            Helping homeowners and families create safer, more accessible homes
+            with honest advice, quality craftsmanship, and solutions built to
+            last.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -52,10 +53,14 @@ export function Hero() {
 
             <a
               href="tel:6037036633"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
             >
               <Phone className="h-4 w-4" />
-              Speak With a Home Safety Specialist
+
+              <div className="flex flex-col text-left leading-tight">
+                <span>Speak With a Home Safety Specialist</span>
+                <span className="text-sm">603-703-6633</span>
+              </div>
             </a>
           </div>
 
@@ -87,14 +92,14 @@ export function Hero() {
               <p className="mt-4 leading-7 text-slate-600">
                 We begin with your concerns, complete a careful walkthrough,
                 explain what we find, and create a realistic plan based on your
-                priorities and budget.
+                priorities, goals, and budget.
               </p>
 
               <ul className="mt-6 space-y-3 text-sm text-slate-700">
                 {[
                   "Interior and exterior walkthrough",
                   "Safety and accessibility review",
-                  "Clear recommendations",
+                  "Detailed recommendations",
                   "Written estimate with no pressure",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -104,19 +109,15 @@ export function Hero() {
                 ))}
               </ul>
 
-              <div className="mt-6 border-l-4 border-teal-500 pl-5">
-                <p className="font-semibold text-slate-900">
-                  Every recommendation begins with one simple question:
-                </p>
-
-                <p className="mt-3 text-lg font-bold text-slate-950">
+              <p className="mt-6 border-l-4 border-teal-500 pl-5 text-lg font-bold leading-8 text-slate-900">
+                Every recommendation begins with one simple question:
+                <br />
+                <span className="text-teal-700">
                   Will this make your home safer?
-                </p>
-
-                <p className="mt-3 font-semibold text-slate-900">
-                  If the answer is no, we won&apos;t recommend it.
-                </p>
-              </div>
+                </span>
+                <br />
+                If the answer is no, we won&apos;t recommend it.
+              </p>
             </div>
           </div>
         </div>
