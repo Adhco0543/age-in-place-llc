@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import {
   Accessibility,
+  Mail,
   MapPin,
   Menu,
   Phone,
@@ -38,6 +39,14 @@ export function Header() {
               (603) 703-6633
             </a>
 
+            <a
+              href="mailto:Adh@Wbhb666.com"
+              className="inline-flex items-center gap-2 transition hover:text-teal-300"
+            >
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              Adh@Wbhb666.com
+            </a>
+
             <span className="inline-flex items-center gap-2">
               <MapPin className="h-4 w-4 text-teal-300" aria-hidden="true" />
               657 Elm St., Manchester, NH
@@ -69,7 +78,7 @@ export function Header() {
                   Age In Place LLC
                 </span>
                 <span className="hidden text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:block">
-                  Accessibility · Home Safety · Remodeling
+                  Home Safety · Accessibility · Remodeling
                 </span>
               </span>
             </Link>
@@ -179,7 +188,15 @@ export function Header() {
                   </Link>
                 </div>
 
-                <p className="px-4 pt-2 text-center text-sm text-slate-500">
+                <a
+                  href="mailto:Adh@Wbhb666.com"
+                  className="inline-flex items-center justify-center gap-2 px-4 pt-2 text-sm font-semibold text-teal-800"
+                >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  Email Age In Place LLC
+                </a>
+
+                <p className="px-4 pt-1 text-center text-sm text-slate-500">
                   657 Elm St., Manchester, NH · Walk-ins welcome
                 </p>
               </div>
