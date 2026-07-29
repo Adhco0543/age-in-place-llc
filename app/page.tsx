@@ -1,10 +1,11 @@
 import { Hero } from "@/components/Hero";
-import { Services } from "@/components/Services";
 import { Owners } from "@/components/Owners";
+import { ProjectGalleryPreview } from "@/components/ProjectGalleryPreview";
+import { Services } from "@/components/Services";
+import { Testimonials } from "@/components/Testimonials";
 import {
   FAQPreview,
   FinalCTA,
-  GalleryPreview,
   Process,
   WhyChooseUs,
 } from "@/components/HomeSections";
@@ -17,7 +18,8 @@ export default function Home() {
       <WhyChooseUs />
       <Process />
       <Owners />
-      <GalleryPreview />
+      <ProjectGalleryPreview />
+      <Testimonials />
       <FAQPreview />
       <FinalCTA />
     </>
