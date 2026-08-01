@@ -1,12 +1,12 @@
 import Link from "next/link";
 import {
+  Accessibility,
   ArrowRight,
   Bath,
   ClipboardCheck,
   CookingPot,
   Drill,
   HandHelping,
-  RampRight,
 } from "lucide-react";
 
 const services = [
@@ -53,7 +53,7 @@ const services = [
     href: "/services/wheelchair-ramps",
     image:
       "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=900&q=85",
-    icon: RampRight,
+    icon: Accessibility,
   },
   {
     title: "Home Safety Assessments",
