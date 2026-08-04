@@ -16,7 +16,8 @@ const services = [
       "Securely installed support in showers, tubs, toilet areas, hallways, and other high-risk locations.",
     href: "/grab-bar-installation",
     image:
-      "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85",
+      "https://unsplash.com/photos/lFDGy3yzCc0/download?force=true&w=1200",
+    imageAlt: "Bathroom toilet area with a securely mounted accessibility grab bar",
     icon: Drill,
   },
   {
@@ -25,7 +26,8 @@ const services = [
       "Walk-in showers, safer layouts, seating, grab bars, and practical bathroom improvements built for daily use.",
     href: "/services/accessible-bathrooms",
     image:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=85",
+      "https://unsplash.com/photos/D2CxpwtgSgQ/download?force=true&w=1200",
+    imageAlt: "Wheelchair user in an accessible bathroom with a handheld shower",
     icon: Bath,
   },
   {
@@ -34,7 +36,8 @@ const services = [
       "Safer layouts, reachable storage, improved lighting, and remodeling solutions that make kitchens easier to use.",
     href: "/services/kitchen-accessibility",
     image:
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85",
+      "https://unsplash.com/photos/rUW_SiE512U/download?force=true&w=1200",
+    imageAlt: "Wheelchair user working comfortably in an accessible kitchen",
     icon: CookingPot,
   },
   {
@@ -43,7 +46,8 @@ const services = [
       "Strong handrails, improved steps, safer landings, and sturdy support for interior and exterior transitions.",
     href: "/services/handrails",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85",
+      "https://unsplash.com/photos/agTVxwUeUc8/download?force=true&w=1200",
+    imageAlt: "Residential stone steps with a sturdy handrail and accessible ramp",
     icon: HandHelping,
   },
   {
@@ -52,7 +56,8 @@ const services = [
       "Custom access solutions for safer entry and exit, designed around the home, site conditions, and user needs.",
     href: "/services/wheelchair-ramps",
     image:
-      "https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=900&q=85",
+      "https://unsplash.com/photos/rW95AsrG78s/download?force=true&w=1200",
+    imageAlt: "Exterior accessibility ramp with secure railings beside a building entrance",
     icon: Accessibility,
   },
   {
@@ -61,7 +66,8 @@ const services = [
       "A careful walkthrough to identify fall risks, mobility barriers, and practical improvements in priority order.",
     href: "/services/home-safety-assessments",
     image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=85",
+      "https://unsplash.com/photos/ZHRt6KThVOw/download?force=true&w=1200",
+    imageAlt: "Contractor reviewing a home improvement project while holding paperwork",
     icon: ClipboardCheck,
   },
 ];
@@ -94,7 +100,8 @@ export function Services() {
                 <div className="relative h-52 overflow-hidden bg-slate-200">
                   <img
                     src={service.image}
-                    alt=""
+                    alt={service.imageAlt}
+                    loading="lazy"
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 to-transparent" />
