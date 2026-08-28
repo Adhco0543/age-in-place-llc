@@ -1,32 +1,24 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ageinplacellc.com";
+const baseUrl = "https://ageinplacellc.com";
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+export default function sitemap(): MetadataRoute.Sitemap {
+  const pages: Array<{
+    path: string;
+    changeFrequency: "weekly" | "monthly";
+    priority: number;
+  }> = [
+    { path: "", changeFrequency: "weekly", priority: 1 },
+    { path: "/services", changeFrequency: "monthly", priority: 0.95 },
+    { path: "/grab-bar-installation", changeFrequency: "monthly", priority: 0.9 },
+    { path: "/about", changeFrequency: "monthly", priority: 0.75 },
+    { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
   ];
+
+  return pages.map(({ path, changeFrequency, priority }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  }));
 }
