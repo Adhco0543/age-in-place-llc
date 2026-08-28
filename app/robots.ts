@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://ageinplacellc.com/sitemap.xml",
+    sitemap: "https://www.ageinplacellc.com/sitemap.xml",
   };
 }
