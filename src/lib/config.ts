@@ -2,10 +2,10 @@
 
 export const siteConfig = {
   name: "Age In Place LLC",
-  domain: "ageinplacellc.com",
+  domain: "www.ageinplacellc.com",
   description:
     "Aging-in-place, accessibility, home-safety, remodeling, and carpentry services designed to help people remain safe and independent at home.",
-  url: "https://ageinplacellc.com",
+  url: "https://www.ageinplacellc.com",
   email: "Adh@Wbhb666.com",
   phone: "(603) 703-6633",
   secondaryPhone: "(603) 677-2737",
