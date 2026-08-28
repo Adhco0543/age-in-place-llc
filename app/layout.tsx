@@ -16,34 +16,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Aging in Place Contractor in Manchester, NH | Age In Place LLC";
+const description =
+  "Age In Place LLC provides aging-in-place remodeling, grab bar installation, accessibility modifications, ramps, safer bathrooms, home safety assessments, and skilled carpentry in Manchester and Southern New Hampshire.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Home Safety & Accessibility Specialists`,
+    default: title,
     template: `%s | ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description,
   keywords: [
     "aging in place Manchester NH",
+    "aging in place contractor Manchester NH",
+    "home accessibility contractor Manchester NH",
+    "senior home modifications Manchester NH",
     "home safety modifications Manchester NH",
-    "accessibility contractor Southern New Hampshire",
     "grab bar installation Manchester NH",
-    "wheelchair ramp contractor New Hampshire",
-    "accessible bathroom remodeling",
-    "senior home modifications",
-    "home accessibility improvements",
-    "fall prevention home modifications",
+    "wheelchair ramp installation Manchester NH",
+    "accessible bathroom remodeling Manchester NH",
+    "handicap accessible contractor Manchester NH",
+    "home safety assessment Manchester NH",
+    "aging in place Southern New Hampshire",
     "Age In Place LLC",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
-  alternates: {
-    canonical: "/",
-  },
+  category: "Home Improvement",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `${siteConfig.name} | Home Safety & Accessibility Specialists`,
-    description: siteConfig.description,
+    title,
+    description,
     type: "website",
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -51,12 +56,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Home Safety & Accessibility Specialists`,
-    description: siteConfig.description,
+    title,
+    description,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -66,10 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-white text-slate-950">
         <LocalBusinessSchema />
         <Header />
