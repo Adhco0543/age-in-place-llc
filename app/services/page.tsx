@@ -10,7 +10,6 @@ import {
   Home,
   Paintbrush,
   Phone,
-  Ruler,
   ShieldCheck,
   Wrench,
 } from 'lucide-react';
@@ -99,6 +98,39 @@ const services = [
       'General construction',
       'Project finishing and punch-list work',
     ],
+  },
+];
+
+const featuredServicePages = [
+  {
+    href: '/grab-bar-installation',
+    title: 'Grab Bar Installation',
+    text: 'Bathroom, shower, tub, toilet-area, hallway, and entry support installed with safety and structure in mind.',
+  },
+  {
+    href: '/services/accessible-bathrooms',
+    title: 'Accessible Bathroom Remodeling',
+    text: 'Safer bathroom layouts, shower access, seating, grab bars, and practical remodeling for long-term use.',
+  },
+  {
+    href: '/services/wheelchair-ramps',
+    title: 'Wheelchair Ramp Installation',
+    text: 'Custom ramp and entry solutions planned around the home, site conditions, and everyday mobility needs.',
+  },
+  {
+    href: '/services/handrails',
+    title: 'Handrails & Safer Stairs',
+    text: 'Interior and exterior handrails, improved steps, and safer transitions for stronger everyday support.',
+  },
+  {
+    href: '/services/home-safety-assessments',
+    title: 'Home Safety Assessments',
+    text: 'A careful walkthrough to identify fall risks, mobility barriers, and practical improvements in priority order.',
+  },
+  {
+    href: '/services/kitchen-accessibility',
+    title: 'Kitchen Accessibility',
+    text: 'Reachable storage, safer work areas, improved lighting, and remodeling that makes the kitchen easier to use.',
   },
 ];
 
@@ -217,6 +249,39 @@ export default function ServicesPage() {
                 </article>
               );
             })}
+          </div>
+
+          <div className="mt-16 border-t border-slate-200 pt-12">
+            <div className="max-w-3xl">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-700">
+                Explore specific services
+              </p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
+                Detailed help for common accessibility and home-safety needs
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-slate-600">
+                Learn more about the services homeowners most often ask us about in Manchester and Southern New Hampshire.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {featuredServicePages.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:border-teal-300 hover:bg-white hover:shadow-md"
+                >
+                  <h3 className="text-lg font-black text-slate-950 group-hover:text-teal-800">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 leading-7 text-slate-600">{service.text}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 font-bold text-teal-800">
+                    Learn more
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
