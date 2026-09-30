@@ -11,6 +11,7 @@ import { ContactForm } from '@/components/ContactForm';
 import { siteConfig } from '@/lib/config';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Contact Age In Place LLC | Manchester, NH',
   description:
     'Contact Age In Place LLC in Manchester, New Hampshire for a free consultation about grab bars, ramps, accessible bathrooms, home safety modifications, carpentry, and remodeling.',

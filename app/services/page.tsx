@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services' },
   title: 'Aging-in-Place & Home Remodeling Services | Manchester, NH',
   description:
     'Explore grab bar installation, wheelchair ramps, handrails, accessible bathrooms, kitchens, carpentry, flooring, drywall, painting, doors, trim, cabinets, and general construction from Age In Place LLC in Manchester, NH.',

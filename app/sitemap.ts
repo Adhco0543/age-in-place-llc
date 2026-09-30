@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/kitchen-accessibility", changeFrequency: "monthly", priority: 0.85 },
     { path: "/about", changeFrequency: "monthly", priority: 0.75 },
     { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/reviews", changeFrequency: "monthly", priority: 0.7 },
   ];
 
   return pages.map(({ path, changeFrequency, priority }) => ({

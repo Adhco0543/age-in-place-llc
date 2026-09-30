@@ -92,12 +92,12 @@ export function Testimonials() {
           <div>
             <p className="font-bold">Have you worked with Age In Place LLC?</p>
             <p className="mt-1 text-sm text-slate-300">
-              Contact us to share feedback about your experience.
+              Share honest feedback about your experience on our reviews page.
             </p>
           </div>
 
           <Link
-            href="/contact"
+            href="/reviews"
             className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 font-bold text-slate-950 transition hover:bg-teal-50"
           >
             Share your experience

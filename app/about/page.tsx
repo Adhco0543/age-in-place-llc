@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: 'About Age In Place LLC | Manchester, NH',
   description:
     'Meet the team behind Age In Place LLC in Manchester, New Hampshire. We provide aging-in-place modifications, accessibility improvements, home safety work, carpentry, and remodeling.',
