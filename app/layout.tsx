@@ -85,8 +85,14 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-white text-slate-950">
         <LocalBusinessSchema />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-bold focus:text-slate-950 focus:ring-2 focus:ring-teal-700"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <div className="flex-1">{children}</div>
+        <main id="main" className="flex-1">{children}</main>
         <Footer />
         <Analytics />
       </body>

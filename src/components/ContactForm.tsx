@@ -74,7 +74,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
           <input id="website" name="website" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
         </div>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-white">
+          <label htmlFor="name" className="block text-base font-medium text-gray-900">
             Full Name *
           </label>
           <input
@@ -86,14 +86,14 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
             required
             maxLength={120}
             autoComplete="name"
-            className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             placeholder="John Doe"
           />
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="email" className="block text-base font-medium text-gray-900">
               Email Address *
             </label>
             <input
@@ -105,12 +105,12 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
               required
               maxLength={254}
               autoComplete="email"
-              className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="john@example.com"
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-900 dark:text-white">
+            <label htmlFor="phone" className="block text-base font-medium text-gray-900">
               Phone Number
             </label>
             <input
@@ -121,7 +121,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
               onChange={handleChange}
               maxLength={40}
               autoComplete="tel"
-              className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="(555) 123-4567"
             />
           </div>
@@ -129,14 +129,14 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
 
         {isReview ? (
           <div>
-            <label htmlFor="rating" className="block text-sm font-medium text-gray-900">Your rating *</label>
-            <select id="rating" name="rating" value={formData.rating} onChange={handleChange} required className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900">
+            <label htmlFor="rating" className="block text-base font-medium text-gray-900">Your rating *</label>
+            <select id="rating" name="rating" value={formData.rating} onChange={handleChange} required className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600">
               <option value="">Choose a rating</option>
               {[1, 2, 3, 4, 5].map((rating) => <option key={rating} value={rating}>{rating} {rating === 1 ? 'star' : 'stars'}</option>)}
             </select>
           </div>
         ) : <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-900 dark:text-white">
+          <label htmlFor="service" className="block text-base font-medium text-gray-900">
             Service Interested In *
           </label>
           <select
@@ -145,7 +145,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
             value={formData.service}
             onChange={handleChange}
             required
-            className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             <option value="">Select a service</option>
             {services.map((service) => <option key={service.id} value={service.id}>{service.title}</option>)}
@@ -154,7 +154,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
         </div>}
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white">
+          <label htmlFor="message" className="block text-base font-medium text-gray-900">
             {isReview ? 'Your feedback *' : 'Message *'}
           </label>
           <textarea
@@ -165,7 +165,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
             required
             maxLength={5000}
             rows={4}
-            className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600"
             placeholder={isReview ? 'Tell us about your experience working with Age In Place LLC...' : 'Tell us about your needs...'}
           />
         </div>
@@ -173,7 +173,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
       </fieldset>
 
       {submitted && (
-        <div role="status" className="rounded-lg bg-green-50 dark:bg-green-900/20 p-4 text-green-800 dark:text-green-200">
+        <div role="status" className="rounded-lg bg-green-50 p-4 text-green-800">
           {isReview ? '✓ Thank you! Your feedback has been sent privately to our team.' : '✓ Thank you! Your inquiry has been sent to our team.'}
         </div>
       )}

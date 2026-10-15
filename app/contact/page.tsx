@@ -25,7 +25,7 @@ const consultationSteps = [
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-950">
+    <div className="min-h-screen bg-slate-50 text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 py-20 text-white sm:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(13,148,136,0.3),transparent_42%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -146,6 +146,6 @@ export default function ContactPage() {
           </aside>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -7,7 +7,7 @@ const unavailable = 'Your inquiry could not be sent. Please call us or use the e
 
 export async function POST(request: Request) {
   const origin = request.headers.get('origin');
-  if (origin && origin !== new URL(request.url).origin) {
+  if (!origin || origin !== new URL(request.url).origin) {
     return NextResponse.json({ error: 'Please submit the form from our website.' }, { status: 403 });
   }
   if (!request.headers.get('content-type')?.startsWith('application/json')) {

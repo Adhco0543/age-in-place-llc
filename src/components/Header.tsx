@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { siteConfig } from '@/lib/config';
 import {
   Accessibility,
   Mail,
@@ -21,6 +22,8 @@ const navigation = [
   { href: '/contact', label: 'Contact' },
 ];
 
+const phoneHref = `tel:${siteConfig.phone.replace(/\D/g, '')}`;
+
 export function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -33,19 +36,19 @@ export function Header() {
         <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-6 text-sm lg:px-8">
           <div className="flex items-center gap-6 text-slate-300">
             <a
-              href="tel:6037036633"
+              href={phoneHref}
               className="inline-flex items-center gap-2 transition hover:text-teal-300"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
-              (603) 703-6633
+              {siteConfig.phone}
             </a>
 
             <a
-              href="mailto:Adh@Wbhb666.com"
+              href={`mailto:${siteConfig.email}`}
               className="inline-flex items-center gap-2 transition hover:text-teal-300"
             >
               <Mail className="h-4 w-4" aria-hidden="true" />
-              Adh@Wbhb666.com
+              {siteConfig.email}
             </a>
 
             <span className="inline-flex items-center gap-2">
@@ -110,7 +113,7 @@ export function Header() {
 
             <div className="flex items-center gap-2 sm:gap-3">
               <a
-                href="tel:6037036633"
+                href={phoneHref}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-teal-800 transition hover:border-teal-200 hover:bg-teal-50 lg:hidden"
                 aria-label="Call Age In Place LLC"
               >
@@ -173,11 +176,11 @@ export function Header() {
 
                 <div className="mt-2 grid gap-3 border-t border-slate-200 pt-4 sm:grid-cols-2">
                   <a
-                    href="tel:6037036633"
+                    href={phoneHref}
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 font-bold text-slate-950 transition hover:bg-slate-100"
                   >
                     <Phone className="h-5 w-5 text-teal-700" aria-hidden="true" />
-                    Call (603) 703-6633
+                    Call {siteConfig.phone}
                   </a>
 
                   <Link
@@ -190,7 +193,7 @@ export function Header() {
                 </div>
 
                 <a
-                  href="mailto:Adh@Wbhb666.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="inline-flex items-center justify-center gap-2 px-4 pt-2 text-sm font-semibold text-teal-800"
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />

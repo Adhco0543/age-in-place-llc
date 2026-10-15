@@ -50,7 +50,7 @@ const specialties = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-950">
+    <div className="min-h-screen bg-white text-slate-950">
       <section className="relative overflow-hidden bg-slate-950 py-20 text-white sm:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.22),transparent_38%),radial-gradient(circle_at_bottom_left,rgba(15,118,110,0.16),transparent_34%)]" />
 
@@ -261,6 +261,6 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

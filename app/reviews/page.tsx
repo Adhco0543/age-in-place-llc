@@ -23,7 +23,7 @@ function getGoogleReviewUrl() {
 export default function ReviewsPage() {
   const googleReviewUrl = getGoogleReviewUrl();
   return (
-    <main className="bg-slate-50 text-slate-950">
+    <div className="bg-slate-50 text-slate-950">
       <section className="bg-slate-950 py-20 text-white sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-300">Customer feedback</p>
@@ -54,6 +54,6 @@ export default function ReviewsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -85,8 +85,8 @@ test('invalid input, spam trap, cross-site requests and large bodies never send 
 
 test('malformed JSON and non-JSON submissions fail without sending mail', async (t) => {
   const send = t.mock.method(globalThis, 'fetch', async () => { throw new Error('Unexpected send'); });
-  assert.equal((await POST(new Request('https://www.ageinplacellc.com/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{' }))).status, 400);
-  assert.equal((await POST(new Request('https://www.ageinplacellc.com/api/contact', { method: 'POST', body: 'name=test' }))).status, 415);
+  assert.equal((await POST(new Request('https://www.ageinplacellc.com/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://www.ageinplacellc.com' }, body: '{' }))).status, 400);
+  assert.equal((await POST(new Request('https://www.ageinplacellc.com/api/contact', { method: 'POST', headers: { Origin: 'https://www.ageinplacellc.com' }, body: 'name=test' }))).status, 415);
   assert.equal(send.mock.callCount(), 0);
 });
 

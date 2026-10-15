@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+const lastModified = new Date("2026-01-01");
 const baseUrl = "https://www.ageinplacellc.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map(({ path, changeFrequency, priority }) => ({
     url: `${baseUrl}${path}`,
-    lastModified: new Date(),
+    lastModified: lastModified,
     changeFrequency,
     priority,
   }));
