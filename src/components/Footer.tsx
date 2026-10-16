@@ -65,7 +65,7 @@ export function Footer() {
                 <span className="block text-xl font-black tracking-tight">
                   Age In Place LLC
                 </span>
-                <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                <span className="block text-sm font-semibold uppercase tracking-[0.14em] text-slate-400">
                   Accessibility · Home Safety · Remodeling
                 </span>
               </span>
@@ -133,7 +133,7 @@ export function Footer() {
             <ul className="mt-5 space-y-4 text-sm text-slate-400">
               <li>
                 <a
-                  href="tel:6037036633"
+                  href={`tel:${siteConfig.phoneTel}`}
                   className="flex items-start gap-3 transition hover:text-teal-300"
                 >
                   <Phone className="mt-0.5 h-5 w-5 shrink-0 text-teal-400" aria-hidden="true" />
@@ -143,7 +143,7 @@ export function Footer() {
 
               <li>
                 <a
-                  href="tel:6036772737"
+                  href={`tel:${siteConfig.secondaryPhoneTel}`}
                   className="flex items-start gap-3 transition hover:text-teal-300"
                 >
                   <Phone className="mt-0.5 h-5 w-5 shrink-0 text-teal-400" aria-hidden="true" />

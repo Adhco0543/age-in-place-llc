@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -9,11 +9,6 @@ import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -82,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-white text-slate-950">
         <LocalBusinessSchema />
         <a
@@ -92,8 +87,16 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Header />
-        <main id="main" className="flex-1">{children}</main>
+        <main id="main" className="flex-1 pb-20 lg:pb-0">{children}</main>
         <Footer />
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white p-3 lg:hidden">
+          <a
+            href={`tel:${siteConfig.phoneTel}`}
+            className="flex min-h-12 items-center justify-center rounded-xl bg-teal-700 px-4 py-3 text-base font-bold text-white"
+          >
+            Call {siteConfig.phone}
+          </a>
+        </div>
         <Analytics />
       </body>
     </html>

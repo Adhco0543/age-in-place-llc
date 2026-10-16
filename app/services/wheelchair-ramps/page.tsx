@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Wheelchair Ramp Installation Manchester NH",
   description: "Wheelchair ramp and accessible entrance solutions in Manchester, NH and Southern New Hampshire from Age In Place LLC. Safer entry, railings, landings, and mobility-focused home modifications.",
   alternates: { canonical: "/services/wheelchair-ramps" },
+  openGraph: { title: "Wheelchair Ramp Installation Manchester NH", description: "Wheelchair ramp and accessible entrance solutions in Manchester, NH and Southern New Hampshire from Age In Place LLC. Safer entry, railings, landings, and mobility-focused home modifications.", url: "/services/wheelchair-ramps" },
 };
 
 export default function WheelchairRampsPage() {

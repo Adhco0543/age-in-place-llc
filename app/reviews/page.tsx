@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Customer Reviews & Feedback',
   description: 'Share your experience with Age In Place LLC in Manchester, NH. We welcome honest feedback about our accessibility, home safety, carpentry, and remodeling work.',
   alternates: { canonical: '/reviews' },
+  openGraph: { title: "Customer Reviews & Feedback", description: "Share your experience with Age In Place LLC in Manchester, NH. We welcome honest feedback about our accessibility, home safety, carpentry, and remodeling work.", url: "/reviews" },
 };
 
 function getGoogleReviewUrl() {

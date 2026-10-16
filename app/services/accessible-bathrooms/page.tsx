@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Accessible Bathroom Remodeling Manchester NH",
   description: "Accessible bathroom remodeling in Manchester, NH including grab bars, safer showers, seating, slip-resistant flooring, and mobility-focused bathroom modifications.",
   alternates: { canonical: "/services/accessible-bathrooms" },
+  openGraph: { title: "Accessible Bathroom Remodeling Manchester NH", description: "Accessible bathroom remodeling in Manchester, NH including grab bars, safer showers, seating, slip-resistant flooring, and mobility-focused bathroom modifications.", url: "/services/accessible-bathrooms" },
 };
 
 export default function AccessibleBathroomsPage() {

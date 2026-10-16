@@ -12,6 +12,7 @@ import { siteConfig } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
+  openGraph: { title: "Contact Age In Place LLC | Manchester, NH", description: "Contact Age In Place LLC in Manchester, New Hampshire for a free consultation about grab bars, ramps, accessible bathrooms, home safety modifications, carpentry, and remodeling.", url: "/contact" },
   title: 'Contact Age In Place LLC | Manchester, NH',
   description:
     'Contact Age In Place LLC in Manchester, New Hampshire for a free consultation about grab bars, ramps, accessible bathrooms, home safety modifications, carpentry, and remodeling.',
@@ -87,14 +88,14 @@ export default function ContactPage() {
 
               <div className="mt-6 space-y-4">
                 <a
-                  href="tel:6037036633"
+                  href={`tel:${siteConfig.phoneTel}`}
                   className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 font-bold transition hover:bg-white/15"
                 >
                   <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />
                   {siteConfig.phone}
                 </a>
                 <a
-                  href="tel:6036772737"
+                  href={`tel:${siteConfig.secondaryPhoneTel}`}
                   className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 font-bold transition hover:bg-white/15"
                 >
                   <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />

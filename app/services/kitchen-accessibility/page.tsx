@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Accessible Kitchen Remodeling Manchester NH",
   description: "Accessible kitchen remodeling and modifications in Manchester, NH including cabinetry, safer flooring, lighting, work areas, storage access, and mobility-focused layouts.",
   alternates: { canonical: "/services/kitchen-accessibility" },
+  openGraph: { title: "Accessible Kitchen Remodeling Manchester NH", description: "Accessible kitchen remodeling and modifications in Manchester, NH including cabinetry, safer flooring, lighting, work areas, storage access, and mobility-focused layouts.", url: "/services/kitchen-accessibility" },
 };
 
 export default function KitchenAccessibilityPage() {

@@ -1,4 +1,5 @@
 import { BadgeCheck, Hammer, Phone } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 const owners = [
   {
@@ -70,11 +71,11 @@ export function Owners() {
 
         <div className="mt-10 text-center">
           <a
-            href="tel:6037036633"
+            href={`tel:${siteConfig.phoneTel}`}
             className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 transition hover:border-teal-300 hover:text-teal-700"
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
-            Speak with our team: (603) 703-6633
+            Speak with our team: {siteConfig.phone}
           </a>
         </div>
       </div>

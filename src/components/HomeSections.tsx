@@ -10,6 +10,7 @@ import {
   Sparkles,
   Wrench,
 } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 const reasons = [
   {
@@ -273,11 +274,11 @@ export function FAQPreview() {
           </p>
 
           <a
-            href="tel:6037036633"
+            href={`tel:${siteConfig.phoneTel}`}
             className="mt-7 inline-flex items-center gap-2 font-semibold text-slate-950 hover:text-teal-700"
           >
             <Phone className="h-4 w-4" />
-            603-703-6633
+            {siteConfig.phone}
           </a>
         </div>
 
@@ -326,11 +327,11 @@ export function FinalCTA() {
 
         <div className="flex flex-col gap-3 sm:flex-row">
           <a
-            href="tel:6037036633"
+            href={`tel:${siteConfig.phoneTel}`}
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-semibold text-slate-950 hover:bg-slate-100"
           >
             <Phone className="h-4 w-4" />
-            Call 603-703-6633
+            Call {siteConfig.phone}
           </a>
 
           <Link

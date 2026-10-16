@@ -8,7 +8,7 @@ const localBusinessSchema = {
   url: siteConfig.url,
   description: siteConfig.description,
   email: siteConfig.email,
-  telephone: '+1-603-703-6633',
+  telephone: siteConfig.phoneE164,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -30,14 +30,14 @@ const localBusinessSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+1-603-703-6633',
+      telephone: siteConfig.phoneE164,
       contactType: 'customer service',
       areaServed: 'US-NH',
       availableLanguage: 'English',
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+1-603-677-2737',
+      telephone: siteConfig.secondaryPhoneE164,
       contactType: 'customer service',
       areaServed: 'US-NH',
       availableLanguage: 'English',

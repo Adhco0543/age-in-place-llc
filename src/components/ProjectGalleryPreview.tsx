@@ -76,7 +76,7 @@ export function ProjectGalleryPreview() {
                     <Icon className="h-7 w-7" aria-hidden="true" />
                   </div>
                   <div className="relative">
-                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-teal-200">
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-sm font-semibold uppercase tracking-[0.16em] text-teal-200">
                       <Camera className="h-3.5 w-3.5" aria-hidden="true" />
                       Photo-ready layout
                     </div>

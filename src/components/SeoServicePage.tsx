@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 type SeoServicePageProps = {
   eyebrow: string;
@@ -35,9 +36,9 @@ export function SeoServicePage({
               Schedule a Free Consultation
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <a href="tel:6037036633" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:bg-white/10">
+            <a href={`tel:${siteConfig.phoneTel}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:bg-white/10">
               <Phone className="h-4 w-4" aria-hidden="true" />
-              603-703-6633
+              {siteConfig.phone}
             </a>
           </div>
         </div>

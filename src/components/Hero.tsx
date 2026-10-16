@@ -6,6 +6,7 @@ import {
   Phone,
   ShieldCheck,
 } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 export function Hero() {
   const trustPoints = [
@@ -50,11 +51,11 @@ export function Hero() {
             </Link>
 
             <a
-              href="tel:6037036633"
+              href={`tel:${siteConfig.phoneTel}`}
               className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/20 bg-white/5 px-5 py-3 font-semibold text-white transition hover:bg-white/10"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
-              <span>Call 603-703-6633</span>
+              <span>Call {siteConfig.phone}</span>
             </a>
           </div>
 

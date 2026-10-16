@@ -8,7 +8,11 @@ export const siteConfig = {
   url: "https://www.ageinplacellc.com",
   email: "Adh@Wbhb666.com",
   phone: "(603) 703-6633",
+  phoneTel: "6037036633",
+  phoneE164: "+16037036633",
   secondaryPhone: "(603) 677-2737",
+  secondaryPhoneTel: "6036772737",
+  secondaryPhoneE164: "+16036772737",
   address: "657 Elm St., Manchester, NH 03101",
 };
 

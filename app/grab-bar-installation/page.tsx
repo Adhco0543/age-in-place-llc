@@ -9,9 +9,11 @@ import {
   Phone,
   ShieldCheck,
 } from 'lucide-react';
+import { siteConfig } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/grab-bar-installation' },
+  openGraph: { title: "Grab Bar Installation in Manchester, NH | Age In Place LLC", description: "Professional grab bar installation for bathrooms, showers, tubs, toilets, hallways, and entry areas in Manchester, NH and nearby communities. Contact Age In Place LLC for a free consultation.", url: "/grab-bar-installation" },
   title: 'Grab Bar Installation in Manchester, NH | Age In Place LLC',
   description:
     'Professional grab bar installation for bathrooms, showers, tubs, toilets, hallways, and entry areas in Manchester, NH and nearby communities. Contact Age In Place LLC for a free consultation.',
@@ -66,11 +68,11 @@ export default function GrabBarInstallationPage() {
               </Link>
 
               <a
-                href="tel:6037036633"
+                href={`tel:${siteConfig.phoneTel}`}
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:bg-white/10"
               >
                 <Phone className="h-4 w-4" aria-hidden="true" />
-                603-703-6633
+                {siteConfig.phone}
               </a>
             </div>
           </div>

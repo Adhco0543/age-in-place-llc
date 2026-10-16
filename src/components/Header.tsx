@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { siteConfig } from '@/lib/config';
 import {
   Accessibility,
@@ -28,7 +28,21 @@ export function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm">
@@ -128,6 +142,7 @@ export function Header() {
               </Link>
 
               <button
+                ref={toggleRef}
                 type="button"
                 onClick={() => setIsOpen((open) => !open)}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-800 transition hover:bg-slate-100 lg:hidden"
@@ -177,6 +192,7 @@ export function Header() {
                 <div className="mt-2 grid gap-3 border-t border-slate-200 pt-4 sm:grid-cols-2">
                   <a
                     href={phoneHref}
+                    onClick={closeMenu}
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 font-bold text-slate-950 transition hover:bg-slate-100"
                   >
                     <Phone className="h-5 w-5 text-teal-700" aria-hidden="true" />
@@ -194,6 +210,7 @@ export function Header() {
 
                 <a
                   href={`mailto:${siteConfig.email}`}
+                  onClick={closeMenu}
                   className="inline-flex items-center justify-center gap-2 px-4 pt-2 text-sm font-semibold text-teal-800"
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />

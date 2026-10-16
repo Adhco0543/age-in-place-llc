@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Handrail Installation & Safer Stairs Manchester NH",
   description: "Handrail installation and stair safety improvements in Manchester, NH. Interior and exterior rails, safer steps, landings, and entry modifications from Age In Place LLC.",
   alternates: { canonical: "/services/handrails" },
+  openGraph: { title: "Handrail Installation & Safer Stairs Manchester NH", description: "Handrail installation and stair safety improvements in Manchester, NH. Interior and exterior rails, safer steps, landings, and entry modifications from Age In Place LLC.", url: "/services/handrails" },
 };
 
 export default function HandrailsPage() {

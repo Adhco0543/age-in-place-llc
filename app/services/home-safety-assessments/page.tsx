@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Home Safety Assessment Manchester NH | Aging in Place",
   description: "Home safety and aging-in-place assessments in Manchester, NH. Identify fall risks, mobility barriers, difficult entrances, bathroom concerns, and practical home modifications.",
   alternates: { canonical: "/services/home-safety-assessments" },
+  openGraph: { title: "Home Safety Assessment Manchester NH | Aging in Place", description: "Home safety and aging-in-place assessments in Manchester, NH. Identify fall risks, mobility barriers, difficult entrances, bathroom concerns, and practical home modifications.", url: "/services/home-safety-assessments" },
 };
 
 export default function HomeSafetyAssessmentsPage() {

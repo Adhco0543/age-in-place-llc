@@ -13,9 +13,11 @@ import {
   ShieldCheck,
   Wrench,
 } from 'lucide-react';
+import { siteConfig } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services' },
+  openGraph: { title: "Aging-in-Place & Home Remodeling Services | Manchester, NH", description: "Explore grab bar installation, wheelchair ramps, handrails, accessible bathrooms, kitchens, carpentry, flooring, drywall, painting, doors, trim, cabinets, and general construction from Age In Place LLC in Manchester, NH.", url: "/services" },
   title: 'Aging-in-Place & Home Remodeling Services | Manchester, NH',
   description:
     'Explore grab bar installation, wheelchair ramps, handrails, accessible bathrooms, kitchens, carpentry, flooring, drywall, painting, doors, trim, cabinets, and general construction from Age In Place LLC in Manchester, NH.',
@@ -198,11 +200,11 @@ export default function ServicesPage() {
               </Link>
 
               <a
-                href="tel:6037036633"
+                href={`tel:${siteConfig.phoneTel}`}
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 font-bold text-white transition hover:bg-white/10"
               >
                 <Phone className="h-4 w-4" aria-hidden="true" />
-                603-703-6633
+                {siteConfig.phone}
               </a>
             </div>
           </div>
