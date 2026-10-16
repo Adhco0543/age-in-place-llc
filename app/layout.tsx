@@ -82,11 +82,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col bg-white text-slate-950">
         <LocalBusinessSchema />
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Header />
-        <div className="flex-1">{children}</div>
+        <div id="main-content" tabIndex={-1} className="site-content flex-1">
+          {children}
+        </div>
         <Footer />
         <Analytics />
       </body>
