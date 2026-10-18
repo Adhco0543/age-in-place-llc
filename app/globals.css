@@ -1178,3 +1178,168 @@ summary {
     animation: none !important;
   }
 }
+
+/* Real project photography, kept separate from architectural inspiration. */
+.project-section {
+  background: #efede6;
+}
+.project-mosaic {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, 245px);
+  gap: 12px;
+}
+.project-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  background: #344c40;
+  cursor: zoom-in;
+  text-align: left;
+}
+.project-tile:first-child {
+  grid-row: span 2;
+}
+.project-tile img {
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.project-tile:hover img {
+  transform: scale(1.035);
+}
+.project-tile-caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 48px 18px 18px;
+  background: linear-gradient(transparent, rgba(10, 24, 18, 0.88));
+  color: white;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.project-tile-caption svg {
+  flex-shrink: 0;
+}
+.project-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(1000px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #526255;
+  background: #17271f;
+  color: #fff;
+  overflow: auto;
+}
+.project-dialog::backdrop {
+  background: rgba(8, 19, 13, 0.92);
+}
+.project-viewer {
+  position: relative;
+}
+.project-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #17271f;
+  color: #fff;
+  border: 1px solid #8a998a;
+  cursor: pointer;
+}
+.project-full-photo {
+  position: relative;
+  height: min(74dvh, 780px);
+  min-height: 160px;
+}
+.project-full-photo img {
+  object-fit: contain;
+}
+.project-viewer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+}
+.project-viewer-footer button {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #8a998a;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.project-viewer-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.project-viewer-footer p span {
+  display: block;
+  font-size: 12px;
+  color: #cfdbc8;
+}
+.project-viewer-footer button:hover,
+.project-close:hover {
+  background: #35604d;
+}
+@media (max-width: 900px) {
+  .project-mosaic {
+    grid-template-rows: repeat(2, 210px);
+  }
+}
+@media (max-width: 720px) {
+  .project-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 8px;
+  }
+  .project-tile {
+    aspect-ratio: 3 / 4;
+  }
+  .project-tile:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .project-tile:first-child img {
+    object-position: center 58%;
+  }
+  .project-tile-caption {
+    padding: 40px 12px 12px;
+    font-size: 12px;
+  }
+  .project-dialog {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+  .project-viewer-footer {
+    padding: 12px 8px;
+    gap: 6px;
+  }
+  .project-viewer-footer p {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-tile img {
+    transition: none;
+  }
+}

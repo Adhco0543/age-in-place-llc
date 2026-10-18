@@ -1,3 +1,4 @@
+import { ProjectGallery } from "./ProjectGallery";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -19,8 +20,8 @@ const spaces = [
   {
     number: "01",
     title: "Comfort in every room.",
-    image: photos.bathroom,
-    alt: "Design inspiration for a warm bathroom with a level-entry shower, seating, and support rails",
+    image: "/images/projects/shower-overview.webp",
+    alt: "Bathroom project with gray tile, grab bars, and a handheld shower",
     description:
       "Thoughtful bathroom changes that make daily routines feel easier.",
     href: "/services/accessible-bathrooms",
@@ -256,10 +257,11 @@ export function PremiumHome() {
           ))}
         </div>
         <p className="image-caption">
-          Design inspiration · AI-generated architectural images illustrate
-          possibilities for your home.
+          Bathroom: actual project photo. Ramp and living space: AI-generated
+          design inspiration.
         </p>
       </section>
+      <ProjectGallery />
       <section className="promise-section" aria-labelledby="promise-heading">
         <div className="promise-photo">
           <Image
