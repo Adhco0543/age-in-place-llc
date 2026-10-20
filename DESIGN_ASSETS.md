@@ -23,3 +23,5 @@ Five photos supplied by Teejay in this conversation are now used in the homepage
 - IMG_0302.jpeg → public/images/projects/toilet-support.webp
 
 The existing generated living/ramp imagery remains labeled design inspiration. Captions describe visible features without inventing locations, customer statements, compliance certifications, or project results.
+
+The five project photos are portrait 3:4 images. Gallery tile ratios follow that source format across desktop, tablet, and mobile breakpoints so the thumbnails retain the visible project details instead of cutting off large portions of each photo. The viewer continues to show the complete image with `object-fit: contain`.
