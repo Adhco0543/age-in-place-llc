@@ -11,3 +11,17 @@ The local WebP files are compressed derivatives of the generated originals, with
 - `public/images/home-entry-v1.webp`: Photorealistic New England clapboard home with a gently sloping broad timber entrance walkway, level landing, sturdy handrails, natural planting, and warm daylight. Wide architectural editorial composition, believable residential scale and joinery. No people, text, logos, watermark, or collage. Design inspiration, not a completed company project.
 
 Replace these with permission-cleared photographs of actual completed work when available, and update attribution and descriptive text. Do not label generated images as completed projects, customer homes, or before-and-after evidence.
+
+## Actual bathroom project photos — October 18, 2026
+
+Five photos supplied by Teejay in this conversation are now used in the homepage gallery, bathroom service card, and accessible bathroom service-page gallery. Originals are retained in the user's uploads; web copies are EXIF-oriented, resized without enlargement, encoded as WebP, and stripped of metadata. No scene details were changed.
+
+- IMG_0298.jpeg → public/images/projects/shower-handheld.webp
+- IMG_0299.jpeg → public/images/projects/shower-overview.webp
+- IMG_0300.jpeg → public/images/projects/shower-seat.webp
+- IMG_0301.jpeg → public/images/projects/shower-entry.webp
+- IMG_0302.jpeg → public/images/projects/toilet-support.webp
+
+The existing generated living/ramp imagery remains labeled design inspiration. Captions describe visible features without inventing locations, customer statements, compliance certifications, or project results.
+
+The five project photos are portrait 3:4 images. Gallery tile ratios follow that source format across desktop, tablet, and mobile breakpoints so the thumbnails retain the visible project details instead of cutting off large portions of each photo. The viewer continues to show the complete image with `object-fit: contain`.
