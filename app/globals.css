@@ -1186,7 +1186,10 @@ summary {
 .project-mosaic {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: repeat(2, 245px);
+  grid-template-rows: repeat(
+    2,
+    clamp(210px, calc((100vw - 88px) / 3), 420px)
+  );
   gap: 12px;
 }
 .project-tile {
@@ -1300,11 +1303,6 @@ summary {
 .project-close:hover {
   background: #35604d;
 }
-@media (max-width: 900px) {
-  .project-mosaic {
-    grid-template-rows: repeat(2, 210px);
-  }
-}
 @media (max-width: 720px) {
   .project-mosaic {
     grid-template-columns: 1fr 1fr;
@@ -1317,10 +1315,7 @@ summary {
   .project-tile:first-child {
     grid-column: span 2;
     grid-row: auto;
-    aspect-ratio: 4 / 3;
-  }
-  .project-tile:first-child img {
-    object-position: center 58%;
+    aspect-ratio: 3 / 4;
   }
   .project-tile-caption {
     padding: 40px 12px 12px;
