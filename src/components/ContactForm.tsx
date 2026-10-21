@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { services, siteConfig } from '@/lib/config';
+import { requestEmailFollowups } from '@/lib/klaviyo';
 
 export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' }) {
   const isReview = kind === 'review';
@@ -14,6 +15,10 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
     website: '',
     rating: '',
   });
+  const [emailConsent, setEmailConsent] = useState(false);
+  const [signupStatus, setSignupStatus] = useState('');
+  const [pendingSignup, setPendingSignup] = useState<string | null>(null);
+  const [signupLoading, setSignupLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -29,10 +34,24 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
     requestId.current = null;
     setSubmitted(false);
     setError('');
+    setSignupStatus('');
+    setPendingSignup(null);
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+  };
+
+  const retrySignup = async () => {
+    if (!pendingSignup || signupLoading) return;
+    setSignupLoading(true);
+    try {
+      await requestEmailFollowups(pendingSignup, true, 'inquiry');
+      setSignupStatus('Email signup requested. If you receive a confirmation email, please confirm to receive updates.');
+      setPendingSignup(null);
+    } catch {
+      setSignupStatus('Your inquiry was sent, but email signup could not be confirmed. You can retry signup below without resending your inquiry.');
+    } finally { setSignupLoading(false); }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,6 +60,8 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
     setLoading(true);
     setError('');
     setSubmitted(false);
+    setSignupStatus('');
+    setPendingSignup(null);
 
     try {
       requestId.current ??= crypto.randomUUID();
@@ -53,6 +74,16 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
       const result = await response.json();
       if (response.ok && result.success === true) {
         setSubmitted(true);
+        if (emailConsent && !isReview) {
+          try {
+            await requestEmailFollowups(formData.email, true, kind);
+            setSignupStatus('Email signup requested. If you receive a confirmation email, please confirm to receive updates.');
+          } catch {
+            setPendingSignup(formData.email.trim());
+            setSignupStatus('Your inquiry was sent, but email signup could not be confirmed. You can retry signup below without resending your inquiry.');
+          }
+        }
+        setEmailConsent(false);
         setFormData({ name: '', email: '', phone: '', service: '', message: '', website: '', rating: '' });
         requestId.current = null;
       } else {
@@ -170,6 +201,15 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
           />
         </div>
 
+        {!isReview && (
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <label className="flex items-start gap-3 text-sm leading-6 text-slate-800">
+              <input type="checkbox" name="emailConsent" checked={emailConsent} onChange={(event) => setEmailConsent(event.target.checked)} className="mt-1 h-5 w-5 shrink-0 accent-teal-800" />
+              <span>Email me home-safety tips, service updates, and consultation follow-ups from Age In Place LLC. Optional; unsubscribe anytime.</span>
+            </label>
+            <p className="mt-2 text-xs leading-5 text-slate-600">If selected, your email address is shared with our email provider, Klaviyo, after your inquiry is sent. Confirm your email to join. Your phone number and message are not shared with Klaviyo.</p>
+          </div>
+        )}
       </fieldset>
 
       {submitted && (
@@ -178,6 +218,8 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
         </div>
       )}
 
+      {signupStatus && <div role="status" className="rounded-lg bg-slate-50 p-4 text-sm leading-6 text-slate-800">{signupStatus}</div>}
+      {pendingSignup && <button type="button" onClick={retrySignup} disabled={signupLoading || loading} className="rounded-lg border border-teal-800 px-4 py-3 text-sm font-semibold text-teal-800 disabled:opacity-50">{signupLoading ? 'Requesting email signup...' : 'Retry email signup only'}</button>}
       {error && <div role="alert" className="rounded-lg bg-red-50 p-4 text-red-800">{error}</div>}
 
       <button
