@@ -22,7 +22,7 @@ Signup failure never changes a successful inquiry into a failure. A separate ret
 ## Remaining release decisions
 
 1. Address resolved October 21: Teejay confirmed 655 Elm St, Manchester, NH 03101. Website display text, shared configuration, and structured business data now use 655. Klaviyo account already uses 655; footer organization tags render that address at send time.
-2. Current account sender/reply-to is adh@wbhb666.com. Sending-domains list returned empty on October 21. Complete branded sender authentication with DNS records for a chosen owned domain before activation; existing Resend records must be preserved.
+2. Sending domain send.ageinplacellc.com was registered in Klaviyo on October 21: ID 3442482, static configuration, status pending. Existing Resend records must be preserved. Before activation, change the draft sender from adh@wbhb666.com to an aligned ageinplacellc.com address; retain the monitored business reply-to.
 3. Approve the website release and activate the flow only after address, sender setup, message review, and an authorized controlled end-to-end test.
 4. Double-opt-in confirmation delivery, actual inbox rendering, unsubscribe behavior, and real profile entry have not been tested with a recipient. No test emails, live subscriptions, imported contacts, or SMS sends were created.
 5. Phone viewport visual verification depends on available browser tools. Static responsive layout uses existing form styling.
@@ -40,3 +40,16 @@ Signup failure never changes a successful inquiry into a failure. A separate ret
 - https://developers.klaviyo.com/en/reference/create_client_subscription
 - https://developers.klaviyo.com/en/reference/flows_api_overview
 - https://help.klaviyo.com/hc/en-us/articles/4408802648731
+
+## DNS records prepared, not published
+
+Domain: ageinplacellc.com. Exact Klaviyo host/value pairs:
+
+| Type | Host | Value |
+| --- | --- | --- |
+| CNAME | send | 3849573873990490671.klaviyodns.com |
+| CNAME | mtd1._domainkey | mtd1._domainkey.3849573873990490671.klaviyodns.com |
+| CNAME | mtd2._domainkey | mtd2._domainkey.3849573873990490671.klaviyodns.com |
+| TXT | @ | klaviyo-site-verification=V39Qde |
+
+Check conflicts and preserve existing records. After publication, verify domain 3442482 and activate the sending domain. Review the sender on all draft emails before flow activation. No DNS changes or live-flow activation performed.
