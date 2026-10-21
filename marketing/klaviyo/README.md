@@ -21,7 +21,7 @@ Signup failure never changes a successful inquiry into a failure. A separate ret
 
 ## Remaining release decisions
 
-1. Account address is 655 Elm St; existing website address is 657 Elm St. Confirm correct business mailing address before activating messages. Footer uses Klaviyo organization tags so the correct account address renders at send time.
+1. Address resolved October 21: Teejay confirmed 655 Elm St, Manchester, NH 03101. Website display text, shared configuration, and structured business data now use 655. Klaviyo account already uses 655; footer organization tags render that address at send time.
 2. Current account sender/reply-to is adh@wbhb666.com. Sending-domains list returned empty on October 21. Complete branded sender authentication with DNS records for a chosen owned domain before activation; existing Resend records must be preserved.
 3. Approve the website release and activate the flow only after address, sender setup, message review, and an authorized controlled end-to-end test.
 4. Double-opt-in confirmation delivery, actual inbox rendering, unsubscribe behavior, and real profile entry have not been tested with a recipient. No test emails, live subscriptions, imported contacts, or SMS sends were created.

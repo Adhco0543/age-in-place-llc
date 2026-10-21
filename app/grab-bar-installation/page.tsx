@@ -168,7 +168,7 @@ export default function GrabBarInstallationPage() {
               <MapPin className="h-7 w-7 text-teal-700" aria-hidden="true" />
               <h3 className="mt-5 text-xl font-black">Local service</h3>
               <p className="mt-3 leading-7 text-slate-600">
-                Age In Place LLC is based at 657 Elm St. in Manchester, New
+                Age In Place LLC is based at 655 Elm St. in Manchester, New
                 Hampshire. Walk-ins are welcome.
               </p>
             </article>
