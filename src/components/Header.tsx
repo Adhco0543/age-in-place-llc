@@ -42,7 +42,7 @@ export function Header() {
 
             <span className="inline-flex items-center gap-2">
               <MapPin className="h-4 w-4 text-teal-300" aria-hidden="true" />
-              657 Elm St., Manchester, NH
+              655 Elm St., Manchester, NH
             </span>
           </div>
 
@@ -202,7 +202,7 @@ export function Header() {
                 </a>
 
                 <p className="px-4 pt-1 text-center text-sm text-slate-500">
-                  657 Elm St., Manchester, NH · Walk-ins welcome
+                  655 Elm St., Manchester, NH · Walk-ins welcome
                 </p>
               </div>
             </nav>

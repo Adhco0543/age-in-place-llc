@@ -76,7 +76,7 @@ export function SeoServicePage({
             <article className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <MapPin className="h-7 w-7 text-teal-700" aria-hidden="true" />
               <h2 className="mt-5 text-xl font-black">Local service from Manchester, NH</h2>
-              <p className="mt-3 leading-7 text-slate-600">Age In Place LLC is based at 657 Elm St. in Manchester and serves homeowners throughout Southern New Hampshire.</p>
+              <p className="mt-3 leading-7 text-slate-600">Age In Place LLC is based at 655 Elm St. in Manchester and serves homeowners throughout Southern New Hampshire.</p>
             </article>
             <article className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <ShieldCheck className="h-7 w-7 text-teal-700" aria-hidden="true" />

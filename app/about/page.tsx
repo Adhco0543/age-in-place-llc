@@ -238,7 +238,7 @@ export default function AboutPage() {
 
           <div className="mt-10 flex items-center justify-center gap-2 text-sm font-semibold text-slate-300">
             <BadgeCheck className="h-5 w-5 text-teal-300" aria-hidden="true" />
-            Fully insured and based at 657 Elm St. in Manchester, NH
+            Fully insured and based at 655 Elm St. in Manchester, NH
           </div>
         </div>
       </section>
