@@ -28,7 +28,15 @@ export async function requestEmailFollowups(
       relationships: { list: { data: { type: 'list', id: klaviyoFollowupListId } } },
     } }),
     signal: AbortSignal.timeout(8000),
+  }).catch((error: unknown) => {
+    // The error name distinguishes a timeout from a network failure without PII.
+    console.warn('Email signup transport failure:', error instanceof Error ? error.name : 'Error');
+    throw error;
   });
-  if (response.status !== 202) throw new Error('Email signup was not accepted.');
+  if (response.status !== 202) {
+    // Status only: never log the address, payload, or provider response body.
+    console.warn('Email signup provider returned HTTP status:', response.status);
+    throw new Error('Email signup was not accepted.');
+  }
   return 'confirmation-requested';
 }
