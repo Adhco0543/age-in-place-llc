@@ -9,7 +9,7 @@ export const siteConfig = {
   email: "Adh@Wbhb666.com",
   phone: "(603) 703-6633",
   secondaryPhone: "(603) 677-2737",
-  address: "657 Elm St., Manchester, NH 03101",
+  address: "655 Elm St., Manchester, NH 03101",
 };
 
 export const services = [
