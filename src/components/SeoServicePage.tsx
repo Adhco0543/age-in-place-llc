@@ -20,7 +20,6 @@ export function SeoServicePage({
   benefits,
   detailsTitle,
   details,
-  searchPhrase,
 }: SeoServicePageProps) {
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -76,7 +75,7 @@ export function SeoServicePage({
             <article className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <MapPin className="h-7 w-7 text-teal-700" aria-hidden="true" />
               <h2 className="mt-5 text-xl font-black">Local service from Manchester, NH</h2>
-              <p className="mt-3 leading-7 text-slate-600">Age In Place LLC is based at 657 Elm St. in Manchester and serves homeowners throughout Southern New Hampshire.</p>
+              <p className="mt-3 leading-7 text-slate-600">Age In Place LLC is based at 655 Elm St. in Manchester and serves homeowners throughout Southern New Hampshire.</p>
             </article>
             <article className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
               <ShieldCheck className="h-7 w-7 text-teal-700" aria-hidden="true" />
@@ -84,7 +83,7 @@ export function SeoServicePage({
               <p className="mt-3 leading-7 text-slate-600">We combine accessibility planning, carpentry, remodeling, and home safety work so the finished solution functions well and looks like it belongs in the home.</p>
             </article>
           </div>
-          <p className="mt-8 text-center text-sm text-slate-500">Common search: {searchPhrase}</p>
+          <p className="mt-8 text-center text-sm text-slate-600">Serving Manchester and surrounding Southern New Hampshire communities. Contact us to discuss your home accessibility project.</p>
         </div>
       </section>
 

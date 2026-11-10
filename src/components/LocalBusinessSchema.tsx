@@ -12,7 +12,7 @@ const localBusinessSchema = {
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '657 Elm St.',
+    streetAddress: '655 Elm St.',
     addressLocality: 'Manchester',
     addressRegion: 'NH',
     postalCode: '03101',
