@@ -20,7 +20,6 @@ export function SeoServicePage({
   benefits,
   detailsTitle,
   details,
-  searchPhrase,
 }: SeoServicePageProps) {
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -84,7 +83,7 @@ export function SeoServicePage({
               <p className="mt-3 leading-7 text-slate-600">We combine accessibility planning, carpentry, remodeling, and home safety work so the finished solution functions well and looks like it belongs in the home.</p>
             </article>
           </div>
-          <p className="mt-8 text-center text-sm text-slate-500">Common search: {searchPhrase}</p>
+          <p className="mt-8 text-center text-sm text-slate-600">Serving Manchester and surrounding Southern New Hampshire communities. Contact us to discuss your home accessibility project.</p>
         </div>
       </section>
 
