@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from '@/lib/metadata';
 import { SeoServicePage } from "@/components/SeoServicePage";
 
-export const metadata: Metadata = {
-  title: "Accessible Kitchen Remodeling Manchester NH",
-  description: "Accessible kitchen remodeling and modifications in Manchester, NH including cabinetry, safer flooring, lighting, work areas, storage access, and mobility-focused layouts.",
-  alternates: { canonical: "/services/kitchen-accessibility" },
-};
+export const metadata = createPageMetadata({
+  path: '/services/kitchen-accessibility',
+  title: 'Accessible Kitchen Remodeling Manchester NH',
+  description: 'Accessible kitchen remodeling and modifications in Manchester, NH including cabinetry, safer flooring, lighting, work areas, storage access, and mobility-focused layouts.',
+});
 
 export default function KitchenAccessibilityPage() {
   return <SeoServicePage

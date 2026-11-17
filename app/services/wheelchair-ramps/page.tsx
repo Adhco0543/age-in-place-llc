@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from '@/lib/metadata';
 import { SeoServicePage } from "@/components/SeoServicePage";
 
-export const metadata: Metadata = {
-  title: "Wheelchair Ramp Installation Manchester NH",
-  description: "Wheelchair ramp and accessible entrance solutions in Manchester, NH and Southern New Hampshire from Age In Place LLC. Safer entry, railings, landings, and mobility-focused home modifications.",
-  alternates: { canonical: "/services/wheelchair-ramps" },
-};
+export const metadata = createPageMetadata({
+  path: '/services/wheelchair-ramps',
+  title: 'Wheelchair Ramp Installation Manchester NH',
+  description: 'Wheelchair ramp and accessible entrance solutions in Manchester, NH and Southern New Hampshire from Age In Place LLC. Safer entry, railings, landings, and mobility-focused home modifications.',
+});
 
 export default function WheelchairRampsPage() {
   return <SeoServicePage

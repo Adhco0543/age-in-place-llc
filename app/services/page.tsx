@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/metadata';
 import Link from 'next/link';
 import {
   Accessibility,
@@ -14,12 +14,11 @@ import {
   Wrench,
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/services' },
+export const metadata = createPageMetadata({
+  path: '/services',
   title: 'Aging-in-Place & Home Remodeling Services | Manchester, NH',
-  description:
-    'Explore grab bar installation, wheelchair ramps, handrails, accessible bathrooms, kitchens, carpentry, flooring, drywall, painting, doors, trim, cabinets, and general construction from Age In Place LLC in Manchester, NH.',
-};
+  description: 'Explore grab bar installation, wheelchair ramps, handrails, accessible bathrooms, kitchens, carpentry, flooring, drywall, painting, doors, trim, cabinets, and general construction from Age In Place LLC in Manchester, NH.',
+});
 
 const services = [
   {

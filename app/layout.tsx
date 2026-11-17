@@ -57,11 +57,19 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_US",
+    images: [{
+      url: "/images/home-living-v1.webp",
+      alt: "AI-generated living room and kitchen design illustration for inspiration, not a completed project.",
+    }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: [{
+      url: "/images/home-living-v1.webp",
+      alt: "AI-generated living room and kitchen design illustration for inspiration, not a completed project.",
+    }],
   },
   robots: {
     index: true,

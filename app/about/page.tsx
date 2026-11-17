@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/metadata';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -11,12 +11,11 @@ import {
   Wrench,
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/about' },
+export const metadata = createPageMetadata({
+  path: '/about',
   title: 'About Age In Place LLC | Manchester, NH',
-  description:
-    'Meet the team behind Age In Place LLC in Manchester, New Hampshire. We provide aging-in-place modifications, accessibility improvements, home safety work, carpentry, and remodeling.',
-};
+  description: 'Meet the team behind Age In Place LLC in Manchester, New Hampshire. We provide aging-in-place modifications, accessibility improvements, home safety work, carpentry, and remodeling.',
+});
 
 const values = [
   {
@@ -238,7 +237,7 @@ export default function AboutPage() {
 
           <div className="mt-10 flex items-center justify-center gap-2 text-sm font-semibold text-slate-300">
             <BadgeCheck className="h-5 w-5 text-teal-300" aria-hidden="true" />
-            Fully insured and based at 657 Elm St. in Manchester, NH
+            Fully insured and based at 655 Elm St. in Manchester, NH
           </div>
         </div>
       </section>
