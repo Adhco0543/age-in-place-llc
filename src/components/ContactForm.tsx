@@ -139,25 +139,27 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
         </div>
 
         {isReview ? (
-          <div>
-            <label htmlFor="rating" className="block text-sm font-medium text-gray-900">Your rating *</label>
-            <select id="rating" name="rating" value={formData.rating} onChange={handleChange} required className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900">
-              <option value="">Choose a rating</option>
-              {[1, 2, 3, 4, 5].map((rating) => <option key={rating} value={rating}>{rating} {rating === 1 ? 'star' : 'stars'}</option>)}
-            </select>
-          </div>
-          <label className="flex items-start gap-3 text-sm leading-6 text-slate-700">
-            <input
-              type="checkbox"
-              name="allowPublicDisplay"
-              checked={formData.allowPublicDisplay}
-              onChange={handleChange}
-              className="mt-1 h-4 w-4 shrink-0 accent-teal-700"
-            />
-            <span>
-              I give Age In Place LLC permission to publish my review on this website after it is verified and approved. Only my first name and last initial may be shown; my contact details will stay private.
-            </span>
-          </label>
+          <>
+            <div>
+              <label htmlFor="rating" className="block text-sm font-medium text-gray-900">Your rating *</label>
+              <select id="rating" name="rating" value={formData.rating} onChange={handleChange} required className="mt-2 w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900">
+                <option value="">Choose a rating</option>
+                {[1, 2, 3, 4, 5].map((rating) => <option key={rating} value={rating}>{rating} {rating === 1 ? 'star' : 'stars'}</option>)}
+              </select>
+            </div>
+            <label className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+              <input
+                type="checkbox"
+                name="allowPublicDisplay"
+                checked={formData.allowPublicDisplay}
+                onChange={handleChange}
+                className="mt-1 h-4 w-4 shrink-0 accent-teal-700"
+              />
+              <span>
+                I give Age In Place LLC permission to publish my review on this website after it is verified and approved. Only my first name and last initial may be shown; my contact details will stay private.
+              </span>
+            </label>
+          </>
         ) : <div>
           <label htmlFor="service" className="block text-sm font-medium text-gray-900 dark:text-white">
             Service Interested In *
