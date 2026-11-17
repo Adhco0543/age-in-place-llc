@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from '@/lib/metadata';
 import { SeoServicePage } from "@/components/SeoServicePage";
 
-export const metadata: Metadata = {
-  title: "Handrail Installation & Safer Stairs Manchester NH",
-  description: "Handrail installation and stair safety improvements in Manchester, NH. Interior and exterior rails, safer steps, landings, and entry modifications from Age In Place LLC.",
-  alternates: { canonical: "/services/handrails" },
-};
+export const metadata = createPageMetadata({
+  path: '/services/handrails',
+  title: 'Handrail Installation & Safer Stairs Manchester NH',
+  description: 'Handrail installation and stair safety improvements in Manchester, NH. Interior and exterior rails, safer steps, landings, and entry modifications from Age In Place LLC.',
+});
 
 export default function HandrailsPage() {
   return <SeoServicePage

@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from '@/lib/metadata';
 import { SeoServicePage } from "@/components/SeoServicePage";
 
-export const metadata: Metadata = {
-  title: "Home Safety Assessment Manchester NH | Aging in Place",
-  description: "Home safety and aging-in-place assessments in Manchester, NH. Identify fall risks, mobility barriers, difficult entrances, bathroom concerns, and practical home modifications.",
-  alternates: { canonical: "/services/home-safety-assessments" },
-};
+export const metadata = createPageMetadata({
+  path: '/services/home-safety-assessments',
+  title: 'Home Safety Assessment Manchester NH | Aging in Place',
+  description: 'Home safety and aging-in-place assessments in Manchester, NH. Identify fall risks, mobility barriers, difficult entrances, bathroom concerns, and practical home modifications.',
+});
 
 export default function HomeSafetyAssessmentsPage() {
   return <SeoServicePage

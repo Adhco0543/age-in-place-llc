@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/metadata';
 import { ExternalLink, MessageSquare, ShieldCheck } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: '/reviews',
   title: 'Customer Reviews & Feedback',
   description: 'Share your experience with Age In Place LLC in Manchester, NH. We welcome honest feedback about our accessibility, home safety, carpentry, and remodeling work.',
-  alternates: { canonical: '/reviews' },
-};
+});
 
 function getGoogleReviewUrl() {
   const value = process.env.GOOGLE_REVIEW_URL;

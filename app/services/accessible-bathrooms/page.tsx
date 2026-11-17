@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from '@/lib/metadata';
 import { SeoServicePage } from "@/components/SeoServicePage";
 
-export const metadata: Metadata = {
-  title: "Accessible Bathroom Remodeling Manchester NH",
-  description: "Accessible bathroom remodeling in Manchester, NH including grab bars, safer showers, seating, slip-resistant flooring, and mobility-focused bathroom modifications.",
-  alternates: { canonical: "/services/accessible-bathrooms" },
-};
+export const metadata = createPageMetadata({
+  path: '/services/accessible-bathrooms',
+  title: 'Accessible Bathroom Remodeling Manchester NH',
+  description: 'Accessible bathroom remodeling in Manchester, NH including grab bars, safer showers, seating, slip-resistant flooring, and mobility-focused bathroom modifications.',
+});
 
 export default function AccessibleBathroomsPage() {
   return <SeoServicePage

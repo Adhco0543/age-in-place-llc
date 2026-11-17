@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/metadata';
 import {
   CheckCircle2,
   Clock3,
@@ -10,12 +10,11 @@ import {
 import { ContactForm } from '@/components/ContactForm';
 import { siteConfig } from '@/lib/config';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/contact' },
+export const metadata = createPageMetadata({
+  path: '/contact',
   title: 'Contact Age In Place LLC | Manchester, NH',
-  description:
-    'Contact Age In Place LLC in Manchester, New Hampshire for a free consultation about grab bars, ramps, accessible bathrooms, home safety modifications, carpentry, and remodeling.',
-};
+  description: 'Contact Age In Place LLC in Manchester, New Hampshire for a free consultation about grab bars, ramps, accessible bathrooms, home safety modifications, carpentry, and remodeling.',
+});
 
 const consultationSteps = [
   'Tell us what is making the home difficult or unsafe.',

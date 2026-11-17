@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/metadata';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -10,12 +10,11 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/grab-bar-installation' },
+export const metadata = createPageMetadata({
+  path: '/grab-bar-installation',
   title: 'Grab Bar Installation in Manchester, NH | Age In Place LLC',
-  description:
-    'Professional grab bar installation for bathrooms, showers, tubs, toilets, hallways, and entry areas in Manchester, NH and nearby communities. Contact Age In Place LLC for a free consultation.',
-};
+  description: 'Professional grab bar installation for bathrooms, showers, tubs, toilets, hallways, and entry areas in Manchester, NH and nearby communities. Contact Age In Place LLC for a free consultation.',
+});
 
 const locations = [
   'Showers and tubs',
