@@ -13,19 +13,25 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
     message: '',
     website: '',
     rating: '',
+    allowPublicDisplay: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const requestId = useRef<string | null>(null);
   const serviceTitle = services.find((service) => service.id === formData.service)?.title || 'Other';
   const emailDraft = `mailto:${siteConfig.email}?subject=${encodeURIComponent(isReview ? 'Customer feedback' : 'Website consultation request')}&body=${encodeURIComponent([
     `Name: ${formData.name}`, `Email: ${formData.email}`, `Phone: ${formData.phone}`,
-    isReview ? `Rating: ${formData.rating || 'Not selected'} / 5` : `Service: ${serviceTitle}`, '', formData.message,
+    isReview ? `Rating: ${formData.rating || 'Not selected'} / 5` : `Service: ${serviceTitle}`,
+    ...(isReview ? [`Permission to publish after verification: ${formData.allowPublicDisplay ? 'Yes' : 'No'}`] : []),
+    '', formData.message,
   ].join('\n'))}`;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+    const target = e.target;
+    const { name } = target;
+    const value = target instanceof HTMLInputElement && target.type === 'checkbox' ? target.checked : target.value;
     requestId.current = null;
     setSubmitted(false);
     setError('');
@@ -53,7 +59,12 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
       const result = await response.json();
       if (response.ok && result.success === true) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', service: '', message: '', website: '', rating: '' });
+        setSuccessMessage(isReview
+          ? formData.allowPublicDisplay
+            ? 'Thank you. Your review was sent for verification. It will only appear publicly after it is verified and approved by our team.'
+            : 'Thank you. Your feedback was sent privately and will not be posted publicly.'
+          : '✓ Thank you! Your inquiry has been sent to our team.');
+        setFormData({ name: '', email: '', phone: '', service: '', message: '', website: '', rating: '', allowPublicDisplay: false });
         requestId.current = null;
       } else {
         setError(typeof result.error === 'string' ? result.error : 'Your inquiry could not be sent. Please call us or use the email option below.');
@@ -135,6 +146,18 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
               {[1, 2, 3, 4, 5].map((rating) => <option key={rating} value={rating}>{rating} {rating === 1 ? 'star' : 'stars'}</option>)}
             </select>
           </div>
+          <label className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+            <input
+              type="checkbox"
+              name="allowPublicDisplay"
+              checked={formData.allowPublicDisplay}
+              onChange={handleChange}
+              className="mt-1 h-4 w-4 shrink-0 accent-teal-700"
+            />
+            <span>
+              I give Age In Place LLC permission to publish my review on this website after it is verified and approved. Only my first name and last initial may be shown; my contact details will stay private.
+            </span>
+          </label>
         ) : <div>
           <label htmlFor="service" className="block text-sm font-medium text-gray-900 dark:text-white">
             Service Interested In *
@@ -174,7 +197,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
 
       {submitted && (
         <div role="status" className="rounded-lg bg-green-50 dark:bg-green-900/20 p-4 text-green-800 dark:text-green-200">
-          {isReview ? '✓ Thank you! Your feedback has been sent privately to our team.' : '✓ Thank you! Your inquiry has been sent to our team.'}
+          {successMessage}
         </div>
       )}
 
@@ -185,7 +208,7 @@ export function ContactForm({ kind = 'inquiry' }: { kind?: 'inquiry' | 'review' 
         disabled={loading}
         className="w-full rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
-        {loading ? 'Sending...' : isReview ? 'Send private feedback' : 'Get Free Quote'}
+        {loading ? 'Sending...' : isReview ? 'Submit review' : 'Get Free Quote'}
       </button>
       <p className="text-sm leading-6 text-slate-600">
         Prefer another way?{' '}

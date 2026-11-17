@@ -402,8 +402,8 @@ export function PremiumHome() {
           <p className="eyebrow">Have we worked together?</p>
           <p>Your experience helps us care for the next home.</p>
         </div>
-        <Link href="/reviews" className="text-link">
-          Share honest feedback <ArrowRight size={17} aria-hidden="true" />
+        <Link href="/reviews" className="home-button gold">
+          Leave a review <ArrowRight size={17} aria-hidden="true" />
         </Link>
       </div>
       <section className="closing-section">
