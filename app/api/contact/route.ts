@@ -3,7 +3,7 @@ import { services, siteConfig } from '@/lib/config';
 
 const emailPattern = /^[^\s<>@]+@[^\s<>@]+\.[^\s<>@]+$/;
 const requestIdPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-const unavailable = 'Your inquiry could not be sent. Please call us or use the email option below. Your message is still in the form.';
+const unavailable = 'Your message could not be sent. Please call us or use the email option below. Your message is still in the form.';
 
 export async function POST(request: Request) {
   const origin = request.headers.get('origin');
@@ -43,6 +43,7 @@ export async function POST(request: Request) {
   const kind = data.kind ?? 'inquiry';
   const isReview = kind === 'review';
   const rating = typeof data.rating === 'string' ? data.rating : '';
+  const allowPublicDisplay = data.allowPublicDisplay === true;
 
   if (data.website) {
     return NextResponse.json({ error: 'Unable to submit this inquiry.' }, { status: 400 });
@@ -64,6 +65,9 @@ export async function POST(request: Request) {
   }
   if (isReview && !/^[1-5]$/.test(rating)) {
     return NextResponse.json({ error: 'Please choose a rating from 1 to 5 stars.' }, { status: 400 });
+  }
+  if (isReview && data.allowPublicDisplay !== undefined && typeof data.allowPublicDisplay !== 'boolean') {
+    return NextResponse.json({ error: 'Invalid review permission.' }, { status: 400 });
   }
   if ((!isReview && !selectedService && serviceId !== 'other') || !requestIdPattern.test(requestId)) {
     return NextResponse.json({ error: 'Please choose a service and try submitting again.' }, { status: 400 });
@@ -88,12 +92,13 @@ export async function POST(request: Request) {
         from: `${siteConfig.name} <${from}>`,
         to: [to],
         reply_to: email,
-        subject: isReview ? 'New private customer feedback' : 'New website consultation request',
+        subject: isReview ? 'New customer review submission' : 'New website consultation request',
         text: [
           `Name: ${name}`,
           `Email: ${email}`,
           `Phone: ${phone || 'Not provided'}`,
           isReview ? `Rating: ${rating} / 5` : `Service: ${selectedService?.title || 'Other'}`,
+          ...(isReview ? [`Permission to publish after verification: ${allowPublicDisplay ? 'Yes' : 'No'}`] : []),
           '',
           message,
         ].join('\n'),
@@ -108,7 +113,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: unavailable }, { status: 502 });
     }
 
-    return NextResponse.json({ success: true, message: 'Thank you! Your inquiry has been sent to our team.' });
+    return NextResponse.json({ success: true, message: 'Thank you! Your message has been sent to our team.' });
   } catch {
     console.error('Contact email request failed.');
     return NextResponse.json({ error: unavailable }, { status: 502 });
