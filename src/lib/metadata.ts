@@ -35,6 +35,7 @@ export function createPageMetadata({
   title,
   description,
 }: PageMetadataInput): Metadata {
+  const url = new URL(path, siteConfig.url).toString();
   const image = imageByPath[path] ?? imageByPath["/"];
   const imageAlt = imageAltByPath[image];
 
@@ -45,7 +46,7 @@ export function createPageMetadata({
     openGraph: {
       title,
       description,
-      url: path,
+      url,
       siteName: siteConfig.name,
       locale: "en_US",
       type: "website",
